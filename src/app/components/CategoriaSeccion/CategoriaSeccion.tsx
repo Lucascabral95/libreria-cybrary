@@ -72,7 +72,7 @@ const CategoriaSeccion: React.FC<CategoryProps> = ({ categoria, verMas, products
                 <div className="parte-superior">
                   <Link href={`/libro/${item.slug}`} className="portada">
                     {/* <Image src={`${process.env.NEXT_PUBLIC_PATH}/api/v1/product/image/product/${item.image}`} alt={item.name} width={164.86} height={251.33} className='imagen' /> */}
-                    <Image src={`http:localhost:4000/uploads/products/${item.image}`} alt={item.name} width={164.86} height={251.33} className='imagen' />
+                    <Image src={`http:localhost:4000/v1/product/image/product/${item.image}`} alt={item.name} width={164.86} height={251.33} className='imagen' />
                   </Link>
                   <div className="tapa">
                     <p> Tapa blanda </p>
