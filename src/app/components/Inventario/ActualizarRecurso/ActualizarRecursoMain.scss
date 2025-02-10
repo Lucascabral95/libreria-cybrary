@@ -1,0 +1,115 @@
+.actualizar-recurso {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px) brightness(60%) contrast(100%);
+
+    .contenedor-actualizar-recurso {
+        border-radius: 4px;
+        width: 30%;
+        max-width: 480px;
+        min-width: 420px;
+        background-color: white;
+        height: fit-content;
+        min-height: 120px;
+        padding: 8px;
+
+        .titulo {
+            width: 100%;
+
+            h4 {
+                text-align: center;
+                color: var(--fondo);
+                font-size: 20px;
+                font-weight: 600;
+            }
+        }
+
+        .boton-de-cierre {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            .boton {
+                width: 20px;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background-color: var(--fondo);
+                cursor: pointer;
+
+                .icon {
+                    color: white;
+                    font-size: 16px;
+                }
+
+                &:hover {
+                    transition: 0.2s;
+                    background-color: var(--fondo-interior);
+                }
+            }
+        }
+
+        .contenido-interior-actualizacion {
+            padding: 16px 12px;
+
+            .grupo-label-input {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin: 10px 0 12px 0;
+
+                .label {
+                    padding: 4px 6px;
+                    font-size: 12.8px;
+                    color: #777777;
+                }
+
+                .input {
+                    border: 1.2px solid #E0E0E0;
+                    border-radius: 16px;
+                    outline: none;
+                    width: 100%;
+                    padding: 6px 10px;
+                    font-size: 12.8px;
+                    color: #777777;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+
+            .boton-de-actualizacion{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                button{
+                padding: 6px 10px; 
+                border-radius: 16px;
+                border: none;
+                cursor: pointer;
+                background-color: var(--fondo);
+                color: white;
+                font-weight: 600;
+
+                &:hover{
+                    transition: 0.2s;
+                    background-color: var(--fondo-interior);
+                }
+                }
+            }
+        }
+    }
+}

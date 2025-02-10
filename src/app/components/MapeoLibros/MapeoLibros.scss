@@ -1,0 +1,181 @@
+.mapeo-de-libros {
+    width: 100%;
+
+    .contenedor-mapeo-de-libros {
+        width: 100%;
+
+        .libros-del-autor {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0;
+            border-bottom: 1px solid #D0D4DD;
+            margin: 24px 0 12px 0;
+
+            .titulo {
+                width: 100%;
+                display: flex;
+                align-items: center;
+
+                p {
+                    font-weight: 400;
+                    color: black;
+                    font-size: 24px;
+                    font-family: var(--tipografia-secundaria);
+                }
+            }
+        }
+
+        .libros {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0 0 12px 0;
+
+            .libro {
+                padding: 8px 16px;
+                width: 24%;
+                height: 440px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                border: 1.2px solid #e0e0e07b;
+                overflow: hidden;
+                margin: 8px 0;
+
+                .parte-superior {
+
+                    .portada {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+                    }
+
+                    .tapa {
+                        display: flex;
+                        align-items: center;
+                        padding: 8px 0;
+                        border-bottom: 1px solid #E0E0E0;
+
+                        p {
+                            font-weight: 400;
+                            color: #000000;
+                            font-size: 14px;
+                        }
+                    }
+
+                    .nombre {
+                        display: flex;
+                        align-items: center;
+                        margin: 6px 0 0 0;
+
+                        p {
+                            line-height: 1.2rem;
+                            color: #000000;
+                            font-size: 16px;
+                            font-weight: 600;
+                        }
+                    }
+
+                    .autor {
+                        display: flex;
+                        align-items: center;
+                        margin: 4px 0;
+
+                        p {
+                            color: #000000;
+                            font-size: 16px;
+                            font-weight: 400;
+                            line-height: 1.2rem;
+                        }
+                    }
+
+                    .precio {
+                        display: flex;
+                        align-items: center;
+
+                        p {
+                            font-weight: 600;
+                            color: var(--color-precio);
+                            font-size: 16px;
+                            line-height: 1.2rem;
+                        }
+                    }
+                }
+
+                .parte-inferior {
+                    padding: 0 0 10px 0;
+
+                    .retiro {
+                        display: flex;
+                        align-items: center;
+
+                        p {
+                            color: #61C84C;
+                            font-size: 14px;
+                            line-height: 1.2rem;
+                        }
+
+                        .icon-retiro {
+                            margin: 0 0 0 6px;
+                            color: #61C84C;
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+    .mapeo-de-libros {
+    
+        .contenedor-mapeo-de-libros {
+    
+            .libros {
+    
+                .libro {
+                    width: 32.5%;
+                }
+            }
+    
+        }
+    }
+}
+
+@media (min-width: 400px) and (max-width: 479px) {
+    .mapeo-de-libros {
+    
+        .contenedor-mapeo-de-libros {
+    
+            .libros {
+    
+                .libro {
+                    width: 49%;
+                }
+            }
+    
+        }
+    }
+}
+
+@media (max-width: 399px) {
+    .mapeo-de-libros {
+    
+        .contenedor-mapeo-de-libros {
+    
+            .libros {
+    
+                .libro {
+                    width: 100%;
+                }
+            }
+    
+        }
+    }
+}

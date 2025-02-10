@@ -1,0 +1,131 @@
+$margin-top: 1vw 0;
+
+.ficha-autor {
+    width: 100%;
+    background-color: #F7F8F9;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    margin: $margin-top;
+
+    .contenedor-ficha-autor {
+        width: 100%;
+        max-width: var(--ancho-pantalla);
+        word-wrap: break-word;
+
+        .titulo-presentacion {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0 24px 0;
+
+            .tit {
+                width: fit-content;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                h3 {
+                    text-align: center;
+                    font-size: 24px;
+                    color: black;
+                    font-family: var(--tipografia-secundaria);
+                }
+            }
+        }
+
+        .biografia-foto {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .foto {
+                width: 30%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .imagen-del-autor {
+                    border-radius: 4px;
+                    width: 80%;
+                }
+            }
+
+            .contenido {
+                display: flex;
+                align-items: center;
+                padding: 0 20px;
+                width: 70%;
+
+                p {
+                    font-size: 16px;
+                    color: black;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 570px) {
+    .ficha-autor {
+        width: 100%;
+        padding: 20px 0;
+        display: flex;
+        justify-content: center;
+        margin: $margin-top;
+
+        .contenedor-ficha-autor {
+            width: 100%;
+            max-width: var(--ancho-pantalla);
+
+            .titulo-presentacion {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 0 24px 0;
+
+                .tit {
+                    width: fit-content;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    h3 {
+                        text-align: center;
+                        font-size: 24px;
+                    }
+                }
+            }
+
+            .biografia-foto {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                align-items: center;
+
+                .foto {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 0 20px 0;
+
+                    .imagen-del-autor {
+                        width: 46%;
+                    }
+                }
+
+                .contenido {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 20px;
+
+                    p {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}

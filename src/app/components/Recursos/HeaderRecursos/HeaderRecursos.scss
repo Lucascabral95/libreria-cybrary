@@ -1,0 +1,318 @@
+.header-recursos {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    background-color: #F7F7FE;
+    padding: 12px 16px;
+    border-bottom: 1.6px solid #E0E0E0;
+
+    .contenedor-header-recursos {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .menu-hamburguesa {
+            display: none;
+            align-items: center;
+            justify-content: center;
+
+            .icono {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .icon {
+                    color: black;
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .buscador {
+            width: 324px;
+            border: 1.6px solid #E0E0E0;
+            padding: 4px;
+            background-color: #EDEDF7;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            height: 34px;
+            
+            .contenedor-buscador {
+                width: 100%;
+                display: flex;
+                align-items: center;
+
+                .icono {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0 6px;
+                    border-right: 1.6px solid #E0E0E0;
+
+                    .icon {
+                        color: #83869B;
+                        font-size: 20px;
+                    }
+                }
+
+                .input-del-buscador {
+                    width: 100%;
+                    background-color: #EDEDF7;
+                    padding: 0 6px;
+
+                    .input {
+                        width: 100%;
+                        border: none;
+                        padding: 0 6px;
+                        background-color: #EDEDF7;
+                        font-size: 14.8px;
+
+                        &:focus {
+                            outline: none;
+                        }
+
+                        &::placeholder {
+                            color: #83869B;
+                            font-size: 14.8px;
+                        }
+                    }
+                }
+            }
+
+            .el-buscador{
+                width: 100%;
+                z-index: 101001;
+            }
+        }
+
+        .admin {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .administrador {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                p {
+                    color: black;
+                    font-size: 14.8px;
+                    font-weight: 600;
+                }
+
+                .icon-header {
+                    display: none;
+                    color: black;
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .sidebar-del-header{
+            width: var(--ancho-pantalla);
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .header-recursos {
+        width: 100%;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        padding: 30px 16px;
+        border-bottom: 1.6px solid #E0E0E0;
+
+        .contenedor-header-recursos {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .menu-hamburguesa {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .icono {
+                    width: 32px;
+                    height: 32px;
+
+                    .icon {
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            .buscador {
+                width: 324px;
+                display: flex;
+                align-items: center;
+                height: 34px;
+                padding: 4px;
+
+                .contenedor-buscador {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+
+                    .icono {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 0 6px;
+                        border-right: 1.6px solid #E0E0E0;
+
+                        .icon {
+                            font-size: 20px;
+                        }
+                    }
+
+                    .input-del-buscador {
+                        width: 100%;
+                        padding: 0 6px;
+
+                        .input {
+                            width: 100%;
+                            padding: 0 6px;
+                            font-size: 14.8px;
+
+                        }
+                    }
+                }
+            }
+
+            .admin {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .administrador {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+                    p {
+                        display: none;
+                        font-size: 14.8px;
+                    }
+
+                    .icon-header {
+                        display: flex;
+                    }
+                }
+            }
+
+            .sidebar-del-header{
+                width: 100%;
+                display: flex;
+            }
+        }
+    }
+}
+
+@media (max-width: 479px) {
+    .header-recursos {
+        width: 100%;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        padding: 30px 16px;
+        border-bottom: 1.6px solid #E0E0E0;
+
+        .contenedor-header-recursos {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .menu-hamburguesa {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .icono {
+                    width: 32px;
+                    height: 32px;
+
+                    .icon {
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            .buscador {
+                 width: 60%;
+                display: flex;
+                align-items: center;
+                height: 34px;
+                padding: 4px;
+
+                .contenedor-buscador {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+
+                    .icono {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 0 6px;
+                        border-right: 1.6px solid #E0E0E0;
+
+                        .icon {
+                            font-size: 20px;
+                        }
+                    }
+
+                    .input-del-buscador {
+                        width: 100%;
+                        padding: 0 6px;
+
+                        .input {
+                            width: 100%;
+                            padding: 0 6px;
+                            font-size: 14.8px;
+
+                        }
+                    }
+                }
+            }
+
+            .admin {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .administrador {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    p {
+                        display: none;
+                        font-size: 14.8px;
+                    }
+
+                    .icon-header {
+                        display: flex;
+                    }
+                }
+            }
+
+            .sidebar-del-header{
+                display: flex;
+            }
+        }
+    }
+}

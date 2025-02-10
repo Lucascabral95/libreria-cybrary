@@ -1,0 +1,200 @@
+.libros-por-autor {
+    width: 100%;
+    $width-imagen: 30%;
+    $width-descripcion: 70%;
+
+    .contenedor-libros-por-autor {
+        width: 100%;
+
+        .seccion-categoria {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin: 0px 0 20px 0;
+
+            .categoria-categoria {
+                user-select: none;
+                display: flex;
+                align-items: center;
+                padding: 4px;
+                border: 1px solid #E0E0E0;
+                height: 32.2px;
+
+                .icon {
+                    font-size: 14px;
+                    color: var(--color-fondo-boton);
+                }
+
+                p {
+                    color: var(--color-circulo);
+                    font-size: 14.8px;
+
+                    &:hover {
+                        transition: 0.2s;
+                        color: var(--color-fondo-boton);
+                    }
+                }
+
+                .link-categoria {
+                    color: var(--color-circulo);
+                    font-size: 14.8px;
+
+                    &:hover {
+                        transition: 0.2s;
+                        color: var(--color-fondo-boton);
+                    }
+                }
+            }
+        }
+
+        .contenedor-de-autor {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .imagen-de-autor {
+                width: $width-imagen;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .img {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 80%;
+                }
+            }
+
+            .contenido-autor {
+                width: $width-descripcion;
+                padding: 0 24px 0 0;
+
+                .titulo {
+                    width: 100%;
+                    margin: 0 0 0 0;
+
+                    h2 {
+                        color: black;
+                        font-size: 24px;
+                        font-weight: 600;
+                    }
+                }
+
+                .biografia {
+                    width: 100%;
+
+                    p {
+                        font-weight: 400;
+                        font-size: 16px;
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .libros-por-autor {
+        width: 100%;
+        $width-imagen: 100%;
+        $width-descripcion: 100%;
+    
+        .contenedor-libros-por-autor {
+            width: 100%;
+    
+            .seccion-categoria {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                margin: 0px 0 20px 0;
+    
+                .categoria-categoria {
+                    user-select: none;
+                    display: flex;
+                    align-items: center;
+                    padding: 4px;
+                    border: 1px solid #E0E0E0;
+                    height: 32.2px;
+    
+                    .icon {
+                        font-size: 14px;
+                        color: var(--color-fondo-boton);
+                    }
+    
+                    p {
+                        color: var(--color-circulo);
+                        font-size: 14.8px;
+    
+                        &:hover {
+                            transition: 0.2s;
+                            color: var(--color-fondo-boton);
+                        }
+                    }
+    
+                    .link-categoria {
+                        color: var(--color-circulo);
+                        font-size: 14.8px;
+    
+                        &:hover {
+                            transition: 0.2s;
+                            color: var(--color-fondo-boton);
+                        }
+                    }
+                }
+            }
+    
+            .contenedor-de-autor {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: column;
+    
+                .imagen-de-autor {
+                    width: $width-imagen;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0 0 16px 0;
+    
+                    .img {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 208.5px;
+                        height: 208.5px;
+                    }
+                }
+    
+                .contenido-autor {
+                    width: $width-descripcion;
+                    padding: 0 24px 0 0;
+    
+                    .titulo {
+                        width: 100%;
+                        margin: 0 0 0 0;
+    
+                        h2 {
+                            color: black;
+                            font-size: 24px;
+                            font-weight: 600;
+                        }
+                    }
+    
+                    .biografia {
+                        width: 100%;
+    
+                        p {
+                            font-weight: 400;
+                            font-size: 16px;
+                            color: black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

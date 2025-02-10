@@ -1,0 +1,48 @@
+.main-principal {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .modelador-libros-recomendados {
+        width: 100%;
+        max-width: var(--ancho-pantalla);
+    }
+
+    .contenedor-main-principal {
+        width: 100%;
+        max-width: var(--ancho-pantalla);
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1999px) {
+    .main-principal {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .modelador-libros-recomendados {
+            padding: 0 20px;
+        }
+
+        .contenedor-main-principal {
+            padding: 0 var(--padding-lateral-mobile);
+            max-width: var(--ancho-pantalla);
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .main-principal {
+        .modelador-libros-recomendados {
+            padding: 0 20px;
+        }
+    }
+}

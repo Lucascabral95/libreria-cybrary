@@ -1,0 +1,57 @@
+.detalle-recurso {
+    width: 100%;
+
+    .contenedor-de-detalle-recurso {
+        width: 100%;
+
+        .titulo-detalle-recurso {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1.2px solid #EBEAF2;
+            margin: 0 0 20px 0;
+
+            h2 {
+                color: black;
+                font-weight: 600;
+                font-size: 22px;
+            }
+        }
+
+        .no-existe-esta-seccion {
+            display: flex;
+            align-items: center;
+
+            p {
+                color: red;
+                font-weight: 600;
+                font-size: 32px;
+            }
+        }
+
+        .informacion-general-contenedor {
+            display: flex;
+            align-items: center;
+            border-bottom: 1.2px solid #EBEAF2;
+            padding:0;
+
+            .informacion {
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                border-bottom: 2px solid var(--fondo-hover);
+
+                p {
+                    color: #333333;
+                    font-size: 14.8px;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .contenedor-mayor-de-detalles-de-recuros{
+            width: 100%;
+            margin: 24px 0;
+        }
+    }
+}

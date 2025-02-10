@@ -1,0 +1,170 @@
+.mejor-autor {
+    width: 100%;
+    margin: 18px;
+    background-color: #F7F8F9;
+    height: fit-content;
+    $width-descripcion: 58%;
+    $width-imagen: 38%;
+
+    .contenedor-mejor-autor {
+        width: 100%;
+        display: flex;
+        padding: 8px 0;
+        justify-content: space-evenly;
+
+        .descripcion {
+            width: $width-descripcion;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            .titulo {
+                display: flex;
+                align-items: center;
+
+                h4 {
+                    color: black;
+                    font-size: 27px;
+                    font-family: 'Crimson Pro', serif;
+                    line-height: 1.5;
+                }
+            }
+
+            .imagen-de-mobile{
+                width: $width-imagen;
+                display: none;
+                align-items: center;
+                justify-content: center;
+    
+                .imagen-autor{
+                    width: 220px;
+                    height: auto;
+                }
+            }
+
+            .texto {
+                display: flex;
+                align-items: center;
+
+                p {
+                    color: black;
+                    font-size: 16px;
+                    line-height: 1.5;
+                }
+            }
+            
+            .boton {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                .link-autor {
+                    border-radius: 8px;
+                    font-weight: 600;
+                    background-color: var(--color-fondo-boton);
+                    padding: 8px 16px;
+                    border: none;
+                    outline: none;
+                    color: black;
+                    font-size: 16px;
+
+                    &:hover{
+                        transition: 0.2s;
+                        background-color: rgba(235, 170, 32, 0.8);
+                    }
+                }
+            }
+        }
+
+        .imagen{
+            width: $width-imagen;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .imagen-autor{
+                width: 220px;
+                height: auto;
+            }
+        }
+    }
+}
+
+@media (max-width: 730px) {
+    .mejor-autor {
+        width: 100%;
+        margin: 0;
+        height: fit-content;
+        $width-descripcion: 100%;
+        $width-imagen: 100%;
+        padding: 0 16px;
+    
+        .contenedor-mejor-autor {
+            width: 100%;
+            display: flex;
+            padding: 8px 0;
+            justify-content: space-evenly;
+    
+            .descripcion {
+                width: $width-descripcion;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+    
+                .titulo {
+                    display: flex;
+                    align-items: center;
+                    margin: 12px 0;
+                    justify-content: center;
+
+                    h4 {
+                        font-size: 22px;
+                    }
+                }
+                
+                .imagen-de-mobile{
+                    width: $width-imagen;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 0 16px 0;
+        
+                    .imagen-autor{
+                        border-radius: 4px;
+                        width: 180px;
+                        height: auto;
+                    }
+                }
+    
+                .texto {
+                    display: flex;
+                    align-items: center;
+                    margin: 0 0 12px 0;
+    
+                    p {
+                        font-size: 14px;
+                    }
+                }
+                
+                .boton {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    .link-autor {
+                        font-weight: bolder;
+                        padding: 8px 16px;
+                        font-size: 14px;
+    
+                    }
+                }
+            }
+    
+            .imagen{
+                display: none;
+            }
+        }
+    }
+}

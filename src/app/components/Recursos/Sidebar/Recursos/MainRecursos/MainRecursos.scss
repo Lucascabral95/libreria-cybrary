@@ -1,0 +1,118 @@
+.main-recursos-recursos {
+    width: 100%;
+
+    .contenedor-main-recursos-recursos {
+        width: 100%;
+
+        .tabla-de-recursos {
+            width: 100%;
+
+            thead {
+                width: 100%;
+                background-color: #F9F9FB;
+                border: 1.2px solid #E0E0E0;
+
+                tr {
+                    th {
+                        padding: 6px 4px;
+                        color: #6C718A;
+                        font-size: 14.8px;
+                    }
+                }
+            }
+
+            tbody {
+                width: 100%;
+                cursor: pointer;
+
+                tr {
+                    border: 1.2px solid #E0E0E0;
+
+                    td {
+                        padding: 12px 8px;
+                        text-align: center;
+                        color: black;
+                        font-size: 14.8px;
+                    }
+
+                    .imagen-del-producto-table {
+                        height: 38px;
+                        width: 32px;
+                    }
+
+                    .imagen-del-autor-table {
+                        width: 32px;
+                        height: 22px;
+                    }
+
+                    .producto-en-cuestion {
+                        padding: 12px 8px;
+                        text-align: center;
+                        color: var(--fondo-hover);
+                        font-weight: 600;
+                        font-size: 14.8px;
+                    }
+
+                    &:hover {
+                        transition: 0.2s;
+                        background-color: #F9F9FB;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 479px) {
+    .main-recursos-recursos {
+        width: 100%;
+        $font-size: 13.32px;
+    
+        .contenedor-main-recursos-recursos {
+            width: 100%;
+    
+            .tabla-de-recursos {
+                width: 100%;
+    
+                thead {
+                    width: 100%;
+    
+                    tr {
+                        th {
+                            padding: 6px 4px;
+                            font-size: $font-size;
+                        }
+                    }
+                }
+    
+                tbody {
+                    width: 100%;
+    
+                    tr {
+                        
+                        td {
+                            padding: 12px 8px;
+                            font-size: $font-size;
+                        }
+    
+                        .imagen-del-producto-table {
+                            height: 38px;
+                            width: 32px;
+                        }
+    
+                        .imagen-del-autor-table {
+                            width: 32px;
+                            height: 22px;
+                        }
+    
+                        .producto-en-cuestion {
+                            padding: 12px 8px;
+                            font-size: $font-size;
+                        }
+    
+                    }
+                }
+            }
+        }
+    }
+}

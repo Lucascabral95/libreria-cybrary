@@ -1,0 +1,401 @@
+.seccion-inventario {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    $width-seccion: 70%;
+
+    .contenedor-seccion-inventario {
+        width: $width-seccion;
+
+        .titulo-detalle-recurso {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1.2px solid #EBEAF2;
+            margin: 0 0 20px 0;
+
+            .tit-detalle-recurso {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                h2 {
+                    color: black;
+                    font-weight: 600;
+                    font-size: 22px;
+                }
+            }
+
+            .boton-de-eliminacion {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .eliminar {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 16px;
+                    padding: 6px 12px;
+                    background-color: #eb0539;
+                    cursor: pointer;
+
+                    p {
+                        color: white;
+                        font-size: 14.8px;
+                        font-weight: 600;
+                    }
+
+                    &:hover {
+                        transition: 0.2s;
+                        background-color: #bf163c;
+                    }
+                }
+            }
+        }
+
+        .informacion-general-contenedor {
+            display: flex;
+            align-items: center;
+            border-bottom: 1.2px solid #EBEAF2;
+            padding: 0;
+
+            .informacion {
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                border-bottom: 2px solid var(--fondo-hover);
+
+                p {
+                    color: #333333;
+                    font-size: 14.8px;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .contenedor-mayor-de-detalles-de-recuros {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .descripciones-del-recurso {
+                display: flex;
+                flex-direction: column;
+
+                .descripcion-clave-valor {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    border: 1.2px solid #EBEAF2;
+
+                    .clave {
+                        width: 100%;
+                        display: flex;
+                        align-self: center;
+                        padding: 8px;
+                        border-right: 1.2px solid #EBEAF2;
+
+
+                        p {
+                            color: #777777;
+                            font-size: 15px;
+                        }
+                    }
+
+                    .valor {
+                        width: 100%;
+                        display: flex;
+                        align-self: center;
+                        padding: 8px;
+
+                        .valor-valor {
+                            font-size: 15px;
+                            color: black;
+                            border: none;
+                            outline: none;
+                            width: 100%;
+
+                            &:focus {
+                                border: none;
+                                outline: none;
+                            }
+                        }
+
+                        .foto-foto {
+                            width: 100%;
+
+                            .foto-imagen {
+                                width: auto;
+                                height: 160px;
+                            }
+
+                            .foto-imagen-producto {
+                                height: 320px;
+                                width: auto;
+                            }
+                        }
+                    }
+                }
+
+                .boton-de-actualizacion-recurso {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    margin: 16px 0 30px 0;
+                    justify-content: center;
+
+                    button {
+                        color: white;
+                        border: none;
+                        outline: none;
+                        padding: 6px 10px;
+                        border-radius: 16px;
+                        background-color: var(--color-seccion);
+                    }
+                }
+
+                .informacion-extra {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    padding: 10px;
+                    margin: 12px 0;
+
+                    p {
+                        color: #333333;
+                        font-size: 14.8px;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.confirmacion-de-eliminacion {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(2px) brightness(40%) contrast(80%);
+    $width-main: 460px;
+    $min-height-main: 120px;
+
+    .contenedor-confirmacion-de-eliminacion {
+        width: 100%;
+        max-width: $width-main;
+        min-height: $min-height-main;
+        border-radius: 4px;
+        padding: 16px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .pregunta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0 20px 0;
+
+            p {
+                color: black;
+                font-weight: 600;
+                font-size: 16.8px;
+                text-align: center;
+            }
+        }
+
+        .botones {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .boton-cancelar-eliminacion {
+                border-radius: 16px;
+                border: none;
+                outline: none;
+                background-color: #14c6d8;
+                padding: 4px 8px;
+                font-weight: 600;
+                color: white;
+                margin: 0 4px;
+
+                &:hover {
+                    transition: 0.2s;
+                    background-color: #16a3b1;
+                }
+            }
+
+            .boton-confirmar-eliminacion {
+                padding: 4px 8px;
+                margin: 0 4px;
+                background-color: #db0e3c;
+                font-weight: 600;
+                color: white;
+                border-radius: 16px;
+                border: none;
+                outline: none;
+
+                &:hover {
+                    transition: 0.2s;
+                    background-color: #ab1738;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .seccion-inventario {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        $width-seccion: 100%;
+        $font-size: 15px;
+        $font-size-title: 22px;
+        $font-size-button: 18px;
+
+        .contenedor-seccion-inventario {
+            width: $width-seccion;
+            padding: 0 8px;
+
+            .titulo-detalle-recurso {
+                .tit-detalle-recurso {
+                    h2 {
+                        font-size: $font-size-title;
+                    }
+                }
+
+                .boton-de-eliminacion {
+                    .eliminar {
+                        padding: 4px 8px;
+                        p {
+                            font-weight: 400;
+                            font-size: $font-size-button;
+                        }
+                    }
+                }
+            }
+
+            .contenedor-mayor-de-detalles-de-recuros {
+
+                .descripciones-del-recurso {
+
+                    .descripcion-clave-valor {
+
+                        .clave {
+
+                            p {
+                                font-size: $font-size;
+                            }
+                        }
+
+                        .valor {
+
+                            .valor-valor {
+                                font-size: $font-size;
+                            }
+
+                            .foto-foto {
+                                width: 100%;
+    
+                                .foto-imagen {
+                                    width: auto;
+                                    height: 160px;
+                                }
+    
+                                .foto-imagen-producto {
+                                    width: 100%;
+                                    height: auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 479px) {
+    .seccion-inventario {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        $width-seccion: 100%;
+        $font-size: 14.2px;
+        $font-size-title: 16px;
+        $font-size-button: 14.8px;
+
+        .contenedor-seccion-inventario {
+            width: $width-seccion;
+            padding: 0 8px;
+
+            .titulo-detalle-recurso {
+                .tit-detalle-recurso {
+                    h2 {
+                        font-size: $font-size-title;
+                    }
+                }
+
+                .boton-de-eliminacion {
+                    .eliminar {
+                        padding: 4px 8px;
+                        p {
+                            font-size: $font-size-button;
+                        }
+                    }
+                }
+            }
+
+            .contenedor-mayor-de-detalles-de-recuros {
+
+                .descripciones-del-recurso {
+
+                    .descripcion-clave-valor {
+
+                        .clave {
+
+                            p {
+                                font-size: $font-size;
+                            }
+                        }
+
+                        .valor {
+
+                            .valor-valor {
+                                font-size: $font-size;
+                            }
+
+                            .foto-foto {
+                                width: 100%;
+    
+                                .foto-imagen {
+                                    width: auto;
+                                    height: 160px;
+                                }
+    
+                                .foto-imagen-producto {
+                                    width: 100%;
+                                    height: auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

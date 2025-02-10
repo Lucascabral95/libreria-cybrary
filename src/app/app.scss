@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    // Paleta de colores
+    --color-precio: #B71C1C;
+    --color-envio: #55C636;
+    --color-seccion: #E0017A;
+    --color-fondo-boton: #EBAA20;
+    --color-circulo: #004D43;
+    -gris-delicado: #8C9091;
+
+    // ancho de pantalla Full Size
+    --ancho-pantalla: 1200px;
+
+    // padding lateral en mobile
+    --padding-lateral-mobile: 20px;
+
+    // tipografia secundaria
+    --tipografia-secundaria: 'Crimson Pro', serif;
+
+    // Recursos protegidos para admins y employees
+    --fondo: #181C2E;
+    --fondo-interior: #21263C;
+    --fondo-hover: #408DFB;
+    --width-dashboard: 200px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.body-principal {
+    width: 100%;
+    background-color: white;
+
+    .contenedor-body-principal {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.not-found {
+    width: 100%;
+    margin: 3.5% 0;
+
+    .contenedor-not-found {
+        width: 100%;
+
+        .imagen-contenidoError {
+            width: 100%;
+            display: flex;
+            align-items: center;
+
+            .imagen {
+                width: 38%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .img {
+                    width: 60%;
+                }
+            }
+
+            .contenido {
+                width: 58%;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+
+                .error-code {
+                    display: flex;
+                    align-items: center;
+
+                    p {
+                        color: #B71C1C;
+                        font-weight: 600;
+                        font-weight: bolder;
+                        font-size: 53px;
+                    }
+                }
+
+                .error-contenido {
+                    display: flex;
+                    align-items: center;
+
+                    p {
+                        color: black;
+                        font-size: 42px;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+        .texto-extra {
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            margin: 12px 0 0 0;
+
+            p {
+                color: #000000DE;
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+// Recursos protegidos para admins y employees
+.recursos-full{
+    background-color: #FFFFFF;
+    min-height: 100vh;
+}

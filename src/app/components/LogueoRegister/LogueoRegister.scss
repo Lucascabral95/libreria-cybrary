@@ -1,0 +1,469 @@
+.logueo-register {
+    width: 100%;
+    height: 100vh;
+    $width-imagen: 40%;
+    $width-formulario: 60%;
+    $font-size: 14.8px;
+    $color-gris: #8C9091;
+
+    .contenedor-logueo-register {
+        width: 100%;
+        height: 100vh;
+
+        .imagen-auth {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            .imagen {
+                width: $width-imagen;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .imagen-de-login-register {
+                    width: 100%;
+                    height: 100vh;
+                }
+            }
+
+            .auth {
+                width: $width-formulario;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 4px;
+                background-color: var(--color-circulo);
+
+                .autenticacion {
+                    width: 100%;
+                    max-width: 480px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 20px;
+                    border: 1.2px solid var(--color-fondo-boton);
+                    box-shadow: 0 0 0px 0 rgba(235, 170, 32, 0.2), 0 0 0px 0 rgba(235, 170, 32, 0.2), 0 0 0px 0 rgba(235, 170, 32, 0.2), 0 0 0px 0 rgba(235, 170, 32, 0.2);
+                    background-color: white;
+                    border-radius: 4px;
+
+                    .logo {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 0 0 12px 0;
+
+                        .logo-imagen {}
+                    }
+
+                    .titulo {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0 0 12px 0;
+
+                        p {
+                            text-align: center;
+                            color: black;
+                            font-size: 24px;
+                            font-weight: 600;
+                        }
+                    }
+
+                    .detalle {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0 0 20px 0;
+
+                        p {
+                            text-align: center;
+                            color: $color-gris;
+                            font-size: $font-size;
+                            font-size: $font-size;
+                        }
+                    }
+
+                    .formulario {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: column;
+
+                        .contenedor-input {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            margin: 12px 0;
+
+                            .label {
+                                color: #333333;
+                                font-size: $font-size;
+                                margin: 0 0 6px 0;
+
+                                .link {
+                                    text-decoration: none;
+                                    color: var(--color-circulo);
+                                    font-weight: 600;
+                                }
+                            }
+
+                            .input {
+                                border: 1.2px solid #F2F2F2;
+                                padding: 8px 12px;
+                                color: #333333;
+                                font-size: $font-size;
+                                outline: none;
+                                border-radius: 4px;
+
+                                &:focus {
+                                    transition: 0.2s;
+                                    background-color: #f2f2f2a7;
+                                }
+
+                                &::placeholder {
+                                    color: $color-gris;
+                                }
+                            }
+
+                            .aclaracion {
+                                padding: 2px 0;
+
+                                p {
+                                    font-size: 12.8px;
+                                    color: $color-gris;
+                                }
+                            }
+
+                            .error-zod {
+                                padding: 2px 0;
+
+                                p {
+                                    color: red;
+                                    font-size: 12.8px;
+                                }
+                            }
+                        }
+
+                        .contenedor-boton {
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-items: center;
+                            margin: 12px 0 0 0;
+
+                            button {
+                                background-color: var(--color-circulo);
+                                width: 100%;
+                                height: 42px;
+                                color: white;
+                                border: none;
+                                border-radius: 16px;
+                                outline: none;
+                                font-size: 16px;
+                                font-weight: 600;
+                            }
+                        }
+
+                        .error-de-inicio-de-sesion {
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin: 4px 0;
+
+                            .error-inicio-sesion-mensaje {
+                                color: red;
+                                text-align: center;
+                                font-size: 16.8px;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@media (min-width: 490px) and (max-width: 767px) {
+    .logueo-register {
+        width: 100%;
+        height: 100vh;
+        $width-imagen: 40%;
+        $width-formulario: 100%;
+        $font-size: 14.8px;
+        background-color: var(--color-circulo);
+
+        .contenedor-logueo-register {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .imagen-auth {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+
+                .imagen {
+                    width: $width-imagen;
+                    align-items: center;
+                    justify-content: center;
+                    //display: flex;
+                    display: none;
+
+                    .imagen-de-login-register {
+                        width: 100%;
+                        height: 100vh;
+                    }
+                }
+
+                .auth {
+                    width: $width-formulario;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: var(--color-circulo);
+
+
+                    .autenticacion {
+                        width: 100%;
+                        max-width: 480px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        padding: 20px;
+                        background-color: white;
+
+                        .logo {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            margin: 0 0 12px 0;
+
+                            .logo-imagen {}
+                        }
+
+                        .titulo {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin: 0 0 12px 0;
+
+                            p {
+                                text-align: center;
+                                font-size: 24px;
+                            }
+                        }
+
+                        .detalle {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin: 0 0 20px 0;
+
+                            p {}
+                        }
+
+                        .formulario {
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            flex-direction: column;
+
+                            .contenedor-input {
+                                width: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                margin: 12px 0;
+
+                                .label {
+                                    font-size: $font-size;
+                                    margin: 0 0 6px 0;
+                                }
+
+                                .input {
+                                    padding: 8px 12px;
+                                    font-size: $font-size;
+
+                                }
+
+                                .aclaracion {
+                                    padding: 2px 0;
+
+                                    p {
+                                        font-size: 12.8px;
+                                    }
+                                }
+
+                                .error-zod {
+                                    padding: 2px 0;
+
+                                    p {
+                                        font-size: 12.8px;
+                                    }
+                                }
+                            }
+
+                            .contenedor-boton {
+                                width: 100%;
+                                display: flex;
+                                align-items: center;
+                                justify-items: center;
+                                margin: 12px 0 0 0;
+
+                                button {
+                                    width: 100%;
+                                    height: 42px;
+                                    font-size: 16px;
+                                }
+                            }
+
+                            .error-de-inicio-de-sesion {
+                                width: 100%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin: 4px 0;
+
+                                .error-inicio-sesion-mensaje {
+                                    font-size: 16.8px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@media (max-width: 489px) {
+    .logueo-register {
+        width: 100%;
+        height: 100vh;
+        $width-imagen: 40%;
+        $width-formulario: 100%;
+        $font-size: 14.8px;
+        padding: 0 20px;
+        background-color: var(--color-circulo);
+
+        .contenedor-logueo-register {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .imagen-auth {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+
+                .imagen {
+                    display: none;
+                }
+
+                .auth {
+                    width: $width-formulario;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .autenticacion {
+                        width: 100%;
+                        max-width: 480px;
+                        padding: 14px;
+
+                        .logo {
+                            margin: 0 0 12px 0;
+
+                            .logo-imagen {
+                                width: 150px;
+                                height: auto;
+                            }
+                        }
+
+                        .titulo {
+                            margin: 0 0 12px 0;
+
+                            p {
+                                text-align: center;
+                                font-size: 18px;
+                            }
+                        }
+
+                        .detalle {
+                            margin: 0 0 20px 0;
+
+                            p {}
+                        }
+
+                        .formulario {
+                            width: 100%;
+
+                            .contenedor-input {
+                                width: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                margin: 12px 0;
+
+                                .label {
+                                    font-size: $font-size;
+                                    margin: 0 0 6px 0;
+                                }
+
+                                .input {
+                                    padding: 8px 12px;
+                                    font-size: $font-size;
+
+                                }
+
+                                .aclaracion {
+                                    padding: 2px 0;
+
+                                    p {
+                                        font-size: 9.6px;
+                                    }
+                                }
+
+                                .error-zod {
+                                    padding: 2px 0;
+
+                                    p {
+                                        font-size: 9.6px;
+                                    }
+                                }
+                            }
+
+                            .contenedor-boton {
+                                width: 100%;
+                                margin: 12px 0 0 0;
+
+                                button {
+                                    width: 100%;
+                                    height: 42px;
+                                    font-size: 14px;
+                                }
+                            }
+
+                            .error-de-inicio-de-sesion {
+                                width: 100%;
+                                margin: 4px 0;
+
+                                .error-inicio-sesion-mensaje {
+                                    font-size: 16.6px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

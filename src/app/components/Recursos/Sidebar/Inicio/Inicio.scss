@@ -1,0 +1,953 @@
+.recursos-inicio {
+    width: 100%;
+    border-bottom: 1.2px solid #E0E0E0;
+
+    .contenedor-recursos-inicio {
+        width: 100%;
+
+        .bienvenida {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin: 0 0 24px 0;
+
+            .icono {
+                width: 40px;
+                height: 40px;
+                border-radius: 4px;
+                border: 1.2px solid #E0E0E0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .icon {
+                    color: #838195;
+                    font-size: 18px;
+                }
+            }
+
+            .rol {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin: 0 0 0 12px;
+
+                .fullname {
+                    display: flex;
+                    align-items: center;
+
+                    p {
+                        color: black;
+                        font-size: 18px;
+                    }
+                }
+
+                .puesto {
+                    display: flex;
+                    align-items: center;
+
+                    p {
+                        font-size: 13px;
+                        color: #838195;
+                    }
+                }
+            }
+        }
+
+        .panel-de-administracion {
+            width: 100%;
+
+            .seccion {
+                cursor: pointer;
+                width: fit-content;
+                padding: 10px 0;
+                display: flex;
+                align-items: center;
+                border-bottom: 3px solid #408DFB;
+
+                p {
+                    color: black;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+// Cuerpo de INICIO
+.acitividad-inventario-detalles {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .actividad-inventario {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 42px 0;
+        align-items: stretch;
+        $width-actividad: 58%;
+        $width-inventario: 38%;
+
+        .actividad {
+            width: $width-actividad;
+
+            .actividad-titulo {
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-top: 1.2px solid #E0E0E0;
+                border-left: 1.2px solid #E0E0E0;
+                border-right: 1.2px solid #E0E0E0;
+                background-color: #F9F9FB;
+
+                p {
+                    text-align: center;
+                    color: black;
+                    font-weight: 600;
+                    font-size: 18px;
+                }
+            }
+
+            .actividad-secciones {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+
+                .act-seccion {
+                    width: 50%;
+                    text-align: center;
+                    align-items: center;
+                    border: 1.2px solid #E0E0E0;
+                    padding: 17px;
+
+                    .cantidad {
+                        display: flex;
+                        flex-direction: column;
+
+                        .cantidad-numero-vendidos {
+                            color: #F7525A;
+                            font-size: 36px;
+                        }
+
+                        .cantidad-texto-vendidos {
+                            font-size: 12px;
+                            color: #8d99ae;
+                        }
+
+                        .cantidad-numero-comprados {
+                            color: #22b378;
+                            font-size: 36px;
+                        }
+
+                        .cantidad-texto-comprados {
+                            font-size: 12px;
+                            color: #8d99ae;
+                        }
+                    }
+
+                    .vendidos {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 20px 0 0 0;
+
+                        p {
+                            color: #495569;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .inventario {
+            width: $width-inventario;
+            display: flex;
+            flex-direction: column;
+
+            .cont-inventario {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #F9F9FB;
+                padding: 10px 0;
+                border-top: 1.2px solid #E0E0E0;
+                border-left: 1.2px solid #E0E0E0;
+                border-right: 1.2px solid #E0E0E0;
+                height: max-content;
+
+                p {
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: black;
+                }
+            }
+
+            .seccion-de-inventario {
+                width: 100%;
+                border: 1.2px solid #E0E0E0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 17px;
+                height: max-content;
+                flex-grow: 1;
+
+                .cantidad-de-texto {
+                    width: fit-content;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    p {
+                        color: #777777;
+                        font-size: 20px;
+                    }
+                }
+
+                .cantidad-de-numero {
+                    width: fit-content;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    p {
+                        color: black;
+                        font-weight: 600;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    .detalles-productos-ventas {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .detalles-productos {
+            width: 48%;
+            display: flex;
+            flex-direction: column;
+            border: 1.2px solid #E0E0E0;
+
+            .titulo-de-seccion {
+                width: 100%;
+                background-color: #F9F9FB;
+                padding: 10px;
+                border-bottom: 1.2px solid #E0E0E0;
+
+                p {
+                    font-weight: 600;
+                    text-align: center;
+                    font-size: 18px;
+                    color: black;
+                }
+            }
+
+            .producto {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 17px;
+
+                .producto-letra {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    p {
+                        color: #495569;
+                        font-size: 16px;
+                    }
+                }
+
+                .producto-numero {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    p {
+                        color: #495569;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        .detalles-ventas {
+            width: 48%;
+            border: 1.2px solid #E0E0E0;
+
+            .titulo-de-la-seccion {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+                background-color: #F9F9FB;
+                border-bottom: 1.2px solid #E0E0E0;
+
+                p {
+                    text-align: center;
+                    font-weight: 600;
+                    color: black;
+                    font-size: 18px;
+                }
+            }
+
+            .product {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 17px;
+
+                .product-chooised {
+                    display: flex;
+                    align-items: center;
+
+                    p {
+                        color: #495569;
+                        font-size: 16px;
+                    }
+                }
+
+                .product-precio {
+                    display: flex;
+                    align-items: center;
+
+                    p {
+                        color: #495569;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    .detalles-productos-ventas-secundarios{
+        margin: 30px 0;
+    }
+}
+// INICIO INICIO INICIO
+
+@media ( max-width: 600px ) {
+    $width-product: 13.6px;
+
+    .recursos-inicio {
+        width: 100%;
+    
+        .contenedor-recursos-inicio {
+            width: 100%;
+    
+            .bienvenida {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                margin: 0 0 24px 0;
+    
+                .icono {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 4px;
+                    border: 1.2px solid #E0E0E0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+    
+                    .icon {
+                        color: #838195;
+                        font-size: 18px;
+                    }
+                }
+    
+                .rol {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    margin: 0 0 0 12px;
+    
+                    .fullname {
+                        display: flex;
+                        align-items: center;
+    
+                        p {
+                            color: black;
+                            font-size: 18px;
+                        }
+                    }
+    
+                    .puesto {
+                        display: flex;
+                        align-items: center;
+    
+                        p {
+                            font-size: 13px;
+                            color: #838195;
+                        }
+                    }
+                }
+            }
+    
+            .panel-de-administracion {
+                width: 100%;
+    
+                .seccion {
+                    cursor: pointer;
+                    width: fit-content;
+                    padding: 10px 0;
+                    display: flex;
+                    align-items: center;
+                    border-bottom: 3px solid #408DFB;
+    
+                    p {
+                        color: black;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+    
+    // Cuerpo de INICIO
+    .acitividad-inventario-detalles {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    
+        .actividad-inventario {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: 32.8pxpx 0;
+            $width-actividad: 100%;
+            $width-inventario: 100%;
+
+            .actividad {
+                width: $width-actividad;
+    
+                .actividad-titulo {
+                    padding: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+    
+                    p {
+                        font-size: 18px;
+                    }
+                }
+    
+                .actividad-secciones {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+    
+                    .act-seccion {
+                        width: 50%;
+                        text-align: center;
+                        align-items: center;
+                        padding: $width-product;
+    
+                        .cantidad {
+                            display: flex;
+                            flex-direction: column;
+    
+                            .cantidad-numero-vendidos {
+                                font-size: 36px;
+                            }
+    
+                            .cantidad-texto-vendidos {
+                                font-size: 12px;
+                            }
+    
+                            .cantidad-numero-comprados {
+                                font-size: 36px;
+                            }
+    
+                            .cantidad-texto-comprados {
+                                font-size: 12px;
+                            }
+                        }
+    
+                        .vendidos {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin: 20px 0 0 0;
+    
+                            p {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .inventario {
+                width: $width-inventario;
+                display: flex;
+                flex-direction: column;
+                margin: 28px 0;
+    
+                .cont-inventario {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 10px 0;
+    
+                    p {
+                        font-size: 18px;
+                    }
+                }
+    
+                .seccion-de-inventario {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: $width-product;
+                    height: max-content;
+                    flex-grow: 1;
+                    
+                    .cantidad-de-texto {
+                        width: fit-content;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+    
+                        p {
+                            font-size: 18px;
+                        }
+                    }
+    
+                    .cantidad-de-numero {
+                        width: fit-content;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+    
+                        p {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    
+        .detalles-productos-ventas {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+    
+            .detalles-productos {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+    
+                .titulo-de-seccion {
+                    width: 100%;
+                    padding: 10px;
+    
+                    p {
+                        font-size: 18px;
+                    }
+                }
+    
+                .producto {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: $width-product;
+    
+                    .producto-letra {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+    
+                        p {
+                            font-size: 16px;
+                        }
+                    }
+    
+                    .producto-numero {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+    
+                        p {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+    
+            .detalles-ventas {
+                width: 100%;
+                margin: 28px 0;
+    
+                .titulo-de-la-seccion {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 10px;
+    
+                    p {
+                        text-align: center;
+                        font-size: 18px;
+                    }
+                }
+    
+                .product {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: $width-product;
+    
+                    .product-chooised {
+                        display: flex;
+                        align-items: center;
+    
+                        p {
+                            font-size: 16px;
+                        }
+                    }
+    
+                    .product-precio {
+                        display: flex;
+                        align-items: center;
+                        
+                        p {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    
+        .detalles-productos-ventas-secundarios{
+            margin: 20px 0;
+        }
+    }
+}
+
+
+@media ( max-width: 479px ) {
+    $width-product: 13.6px;
+    $width-titles: 14.4px;
+    $padding-titles: 8.4px;
+
+    .recursos-inicio {
+        width: 100%;
+    
+        .contenedor-recursos-inicio {
+            width: 100%;
+    
+            .bienvenida {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                margin: 0 0 24px 0;
+    
+                .icono {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 4px;
+                    border: 1.2px solid #E0E0E0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+    
+                    .icon {
+                        color: #838195;
+                        font-size: 18px;
+                    }
+                }
+    
+                .rol {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    margin: 0 0 0 12px;
+    
+                    .fullname {
+                        display: flex;
+                        align-items: center;
+    
+                        p {
+                            color: black;
+                            font-size: 18px;
+                        }
+                    }
+    
+                    .puesto {
+                        display: flex;
+                        align-items: center;
+    
+                        p {
+                            font-size: 13px;
+                            color: #838195;
+                        }
+                    }
+                }
+            }
+    
+            .panel-de-administracion {
+                width: 100%;
+    
+                .seccion {
+                    cursor: pointer;
+                    width: fit-content;
+                    padding: 10px 0;
+                    display: flex;
+                    align-items: center;
+                    border-bottom: 3px solid #408DFB;
+    
+                    p {
+                        color: black;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+    
+    // Cuerpo de INICIO
+    .acitividad-inventario-detalles {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    
+        .actividad-inventario {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: 28px 0;
+            $width-actividad: 100%;
+            $width-inventario: 100%;
+
+            .actividad {
+                width: $width-actividad;
+    
+                .actividad-titulo {
+                    padding: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+    
+                    p {
+                        font-size: 18px;
+                    }
+                }
+    
+                .actividad-secciones {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+    
+                    .act-seccion {
+                        width: 50%;
+                        text-align: center;
+                        align-items: center;
+                        padding: $width-product;
+    
+                        .cantidad {
+                            display: flex;
+                            flex-direction: column;
+    
+                            .cantidad-numero-vendidos {
+                                font-size: 36px;
+                            }
+    
+                            .cantidad-texto-vendidos {
+                                font-size: 12px;
+                            }
+    
+                            .cantidad-numero-comprados {
+                                font-size: 36px;
+                            }
+    
+                            .cantidad-texto-comprados {
+                                font-size: 12px;
+                            }
+                        }
+    
+                        .vendidos {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin: 20px 0 0 0;
+    
+                            p {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .inventario {
+                width: $width-inventario;
+                display: flex;
+                flex-direction: column;
+                margin: 28px 0;
+    
+                .cont-inventario {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: $padding-titles 0;
+    
+                    p {
+                        font-size: 18px;
+                    }
+                }
+    
+                .seccion-de-inventario {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: $width-product;
+                    height: max-content;
+                    flex-grow: 1;
+                    
+                    .cantidad-de-texto {
+                        width: fit-content;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+    
+                        p {
+                            font-size: 18px;
+                        }
+                    }
+    
+                    .cantidad-de-numero {
+                        width: fit-content;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+    
+                        p {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    
+        .detalles-productos-ventas {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+    
+            .detalles-productos {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+    
+                .titulo-de-seccion {
+                    width: 100%;
+                    padding: $padding-titles;
+    
+                    p {
+                        font-size: $width-titles;
+                    }
+                }
+    
+                .producto {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: $width-product;
+    
+                    .producto-letra {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+    
+                        p {
+                            font-size: 16px;
+                        }
+                    }
+    
+                    .producto-numero {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+    
+                        p {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+    
+            .detalles-ventas {
+                width: 100%;
+                margin: 28px 0;
+    
+                .titulo-de-la-seccion {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: $padding-titles;
+    
+                    p {
+                        text-align: center;
+                        font-size: $width-titles;
+                    }
+                }
+    
+                .product {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: $width-product;
+    
+                    .product-chooised {
+                        display: flex;
+                        align-items: center;
+    
+                        p {
+                            font-size: 16px;
+                        }
+                    }
+    
+                    .product-precio {
+                        display: flex;
+                        align-items: center;
+                        
+                        p {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    
+        .detalles-productos-ventas-secundarios{
+            margin: 20px 0;
+        }
+    }
+}

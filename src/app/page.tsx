@@ -1,101 +1,55 @@
-import Image from "next/image";
+"use client"
+import React, { useEffect, useState } from 'react'
+import "./app.scss"
+import MainPrincipal from './components/MainPrincipal/MainPrincipal'
+import Hero from './components/Hero/Hero'
+import CategoriaSeccion from './components/CategoriaSeccion/CategoriaSeccion'
+import MejorAutor from './components/MejorAutor/MejorAutor'
+import CategoriasRecomendadas from './components/CategoriasRecomendadas/CategoriasRecomendadas'
+import { obtenerLibrosPorVariosAutores } from '@/utils/funciones-libros'
+import { ProductWithAuthor } from '@/common/interfaces/products-with-author-interface'
+import Footer from './components/Footer/Footer'
+import Header from './components/Header/Header'
 
-export default function Home() {
+const Home: React.FC = () => {
+  const [librosDeHarry, setLibrosDeHarry] = useState<ProductWithAuthor[]>([])
+  const [librosDeJuegosDeTronos, setLibrosDeJuegosDeTronos] = useState<ProductWithAuthor[]>([])
+  const [librosDeStephenKing, setLibrosDeStephenKing] = useState<ProductWithAuthor[]>([])
+
+  useEffect(() => {
+    obtenerLibrosPorVariosAutores( "George R.R. Martin", setLibrosDeJuegosDeTronos, Number(6), setLibrosDeStephenKing, "Stephen King", setLibrosDeHarry, "J.K. Rowling" )
+  }, [])
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      <Header />
+
+      <MainPrincipal excedente={true} fichaAutor={false} >
+
+        <Hero />
+
+        <CategoriaSeccion categoria="Terror" verMas="terror" products={librosDeStephenKing} />
+
+        <MejorAutor
+          autor='Stephen King'
+          descripcion='Stephen King es un escritor estadounidense conocido principalmente por sus obras de terror, suspense y fantasía. Nació el 21 de septiembre de 1947 en Portland, Maine. A lo largo de su carrera, ha escrito más de 60 novelas y varios relatos cortos, muchos de los cuales se han convertido en bestsellers. Entre sus libros más famosos se encuentran Carrie, It, El Resplandor y Misery.'
+          imagen='/img/sthephen-king-author.jpg'
+          slug='stephen_king'
+        />
+
+        <CategoriaSeccion categoria="Harry Potter" verMas="fantasia" products={librosDeHarry} />
+
+        <CategoriasRecomendadas />
+
+        <CategoriaSeccion categoria="Juego de Tronos" verMas="fantasia" products={librosDeJuegosDeTronos} />
+
+      </MainPrincipal>
+
+      <Footer />
+
+    </>
+  )
 }
+
+export default Home

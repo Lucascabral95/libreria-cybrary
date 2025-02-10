@@ -1,0 +1,14 @@
+.error-de-recursos {
+    width: 100%;
+
+    .error {
+        display: flex;
+        align-items: center;
+
+        p {
+            font-size: 32px;
+            color: red;
+            font-weight: bold;
+        }
+    }
+}

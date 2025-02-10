@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "image": "/img/ciencia-ficcion.avif",
+        "name": "Ficcion",
+        "slug": "ficcion"
+    }, 
+    {
+        "id": 2,
+        "image": "/img/terror.avif",
+        "name": "Terror",
+        "slug": "terror"
+    }, 
+    {
+        "id": 3,
+        "image": "/img/comedia.avif",
+        "name": "Fantasía",
+        "slug": "fantasia"
+    }, 
+    {
+        "id": 4,
+        "image": "/img/drama.avif",
+        "name": "Drama",
+        "slug": "drama"
+    }, 
+    {
+        "id": 5,
+        "image": "/img/misterio.avif",
+        "name": "Suspenso",
+        "slug": "suspenso"
+    }
+]

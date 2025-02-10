@@ -1,0 +1,155 @@
+.hero {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    margin: 0 0 24px 0;
+
+    .contenedor-hero {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .imagen-de-hero {
+            width: 100%;
+        }
+
+        .libros-imprecindibles {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+
+            .imprecindible {
+                width: 75%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 35px 40px 35px 40px;
+
+                h3 {
+                    color: white;
+                    font-weight: 600;
+                    font-size: 36.8px;
+                }
+
+                p {
+                    color: white;
+                    font-size: 16px;
+                }
+            }
+
+            .boton {
+                width: 25%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .link-libros-imprescincibles {
+                    cursor: pointer;
+                    background-color: var(--color-fondo-boton);
+                    border-radius: 6px;
+                    padding: 10px 12px;
+                    font-size: 16px;
+                    border: none;
+
+                    &:hover{
+                        transition: 0.2s;
+                        background-color: #B58018;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 769px) and (max-width: 960px) {
+    .hero {
+    
+        .contenedor-hero {
+    
+            .libros-imprecindibles {
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 35px 40px 35px 40px;
+    
+                .imprecindible {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: 0;
+    
+                    h3 {
+                        font-size: 26px;
+                    }
+    
+                    p {
+                        font-size: 16px;
+                    }
+                }
+    
+                .boton {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    margin: 6px 0 0 0;
+    
+                    .link-libros-imprescincibles {
+                        padding: 9px 12px;
+                        font-size: 16px;
+    
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        width: calc(100% + var(--padding-lateral-mobile) * 2);
+        margin: 0 0 0 calc(var(--padding-lateral-mobile) * -1);
+    
+        .contenedor-hero {
+    
+            .libros-imprecindibles {
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 24px 16px;
+    
+                .imprecindible {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: 0;
+                    margin: 0 0 14px 0;
+    
+                    h3 {
+                        font-size: 24px;
+                    }
+    
+                    p {
+                        font-size: 16px;
+                    }
+                }
+    
+                .boton {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    
+                    .link-libros-imprescincibles {
+                        width: 100%;
+                        padding: 9px 12px;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
