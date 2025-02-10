@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import "./CategoriaSeccion.scss"
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { CiDeliveryTruck } from "react-icons/ci";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { ProductWithAuthor } from '@/common/interfaces/products-with-author-interface';
