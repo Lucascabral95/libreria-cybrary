@@ -3,7 +3,7 @@ import { catchError } from "@/app/components/Recursos/utils/obtencionDetallesRec
 import { Errors } from "@/common/interfaces/errors.interface"
 import { ProductWithAuthor } from "@/common/interfaces/products-with-author-interface"
 import { Product } from "@/common/interfaces/products.interface"
-import { isAxiosError } from "axios"
+import axios, { isAxiosError } from "axios"
 
 export const obtenerLibro = async (slug: string | string[], setDataLibro: (libro: ProductWithAuthor[]) => void, setError: (error: Errors) => void) => {
     try {
@@ -94,7 +94,7 @@ export const obtenerLibrosPorVariosAutores = async (
 ) => {
     try {
         // const response = await axiosConToken.get(`${process.env.NEXT_PUBLIC_PATH}/api/v1/product/with-author`);
-        const response = await axiosConToken.get(`https://nest-app-6t3h.onrender.com/api/v1/product/with-author`);
+        const response = await axios.get(`https://nest-app-6t3h.onrender.com/api/v1/product/with-author`);
 
         if (response.status === 200) {
             const librosFiltrados = response.data
