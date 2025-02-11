@@ -3,7 +3,7 @@ import { catchError } from "@/app/components/Recursos/utils/obtencionDetallesRec
 import { Errors } from "@/common/interfaces/errors.interface"
 import { ProductWithAuthor } from "@/common/interfaces/products-with-author-interface"
 import { Product } from "@/common/interfaces/products.interface"
-import axios, { isAxiosError } from "axios"
+import { isAxiosError } from "axios"
 
 export const obtenerLibro = async (slug: string | string[], setDataLibro: (libro: ProductWithAuthor[]) => void, setError: (error: Errors) => void) => {
     try {
