@@ -17,10 +17,9 @@ const Home: React.FC = () => {
   const [librosDeStephenKing, setLibrosDeStephenKing] = useState<ProductWithAuthor[]>([])
 
   useEffect(() => {
-    const fetchData = async () => {
-     await obtenerLibrosPorVariosAutores("George R.R. Martin", setLibrosDeJuegosDeTronos, Number(6), setLibrosDeStephenKing, "Stephen King", setLibrosDeHarry, "J.K. Rowling")
-    }
-    fetchData()
+
+    obtenerLibrosPorVariosAutores("George R.R. Martin", setLibrosDeJuegosDeTronos, Number(6), setLibrosDeStephenKing, "Stephen King", setLibrosDeHarry, "J.K. Rowling")
+    
   }, [])
 
   return (

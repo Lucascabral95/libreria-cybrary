@@ -46,32 +46,31 @@ const axiosConToken = axios.create({
     withCredentials: true,
 })
 
-const obtenerToken = async () => {
-    try {
-        const response = await axios.get(`${MYPATH}/api/api/token`, { withCredentials: true })
-        return response.data.message
-    } catch (error) {
-        console.log('Error obteniendo el token:', error)
-        return null
-    }
-}
+// const obtenerToken = async () => {
+//     try {
+//         const response = await axios.get(`${MYPATH}/api/api/token`, { withCredentials: true })
+//         return response.data.message
+//     } catch (error) {
+//         console.log('Error obteniendo el token:', error)
+//         return null
+//     }
+// }
 
-axiosConToken.interceptors.request.use(
-    async (config) => {
-        // const token = await obtenerToken()
-        const token = ''
+// axiosConToken.interceptors.request.use(
+//     async (config) => {
+//          const token = await obtenerToken()
 
-        if (token) {
-            config.headers.Authorization = `Bearer ${token}`
-        } else {
-            console.log('No se encontró token. Continuando sin Authorization header.')
-        }
+//         if (token) {
+//             config.headers.Authorization = `Bearer ${token}`
+//         } else {
+//             console.log('No se encontró token. Continuando sin Authorization header.')
+//         }
 
-        return config
-    },
-    (error) => {
-        return Promise.reject(error)
-    }
-)
+//         return config
+//     },
+//     (error) => {
+//         return Promise.reject(error)
+//     }
+// )
 
 export default axiosConToken
