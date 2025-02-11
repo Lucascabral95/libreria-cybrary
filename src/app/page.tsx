@@ -31,7 +31,7 @@ const Home: React.FC = () => {
      useEffect(() => {
         const obtenreDatos = async () => {
           try {
-             const response = await axios.get('/api/v1/product/with-author?limit=100')
+             const response = await axios.get('https://nest-app-6t3h.onrender.com/api/v1/product/with-author?limit=100')
 
              if (response.status === 200) {
               setLibrosDeHarry(response.data.filter((a: ProductWithAuthor) => a.name_author === "J.K. Rowling"))
