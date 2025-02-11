@@ -10,14 +10,38 @@ import { obtenerLibrosPorVariosAutores } from '@/utils/funciones-libros'
 import { ProductWithAuthor } from '@/common/interfaces/products-with-author-interface'
 import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header'
+import axios from 'axios'
+import { Product } from '@/common/interfaces/products.interface'
+import Image from 'next/image'
 
 const Home: React.FC = () => {
   const [librosDeHarry, setLibrosDeHarry] = useState<ProductWithAuthor[]>([])
   const [librosDeJuegosDeTronos, setLibrosDeJuegosDeTronos] = useState<ProductWithAuthor[]>([])
   const [librosDeStephenKing, setLibrosDeStephenKing] = useState<ProductWithAuthor[]>([])
 
+  const [productos, setProductos] = useState<Product[]>([])
+
   useEffect(() => {
-    obtenerLibrosPorVariosAutores( "George R.R. Martin", setLibrosDeJuegosDeTronos, Number(6), setLibrosDeStephenKing, "Stephen King", setLibrosDeHarry, "J.K. Rowling" )
+    obtenerLibrosPorVariosAutores("George R.R. Martin", setLibrosDeJuegosDeTronos, Number(6), setLibrosDeStephenKing, "Stephen King", setLibrosDeHarry, "J.K. Rowling")
+  }, [])
+
+
+  useEffect(() => {
+    const obtenerProductos = async () => {
+      try {
+        const response = await axios.get('/api/api/test')
+
+        if (response.status === 200) {
+          console.log(response)
+          setProductos(response.data)
+        }
+
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    obtenerProductos()
   }, [])
 
   return (
@@ -25,12 +49,14 @@ const Home: React.FC = () => {
 
       <Header />
 
+      {productos?.map((item, index) => (
+        <div key={index}>
+          <p> {item.name} </p>
+          <Image src={`https://nest-app-6t3h.onrender.com/api/v1/product/image/product/${item.image}`} alt={item.name} width={300} height={350} /> 
+        </div>
+      ))}
+
       <MainPrincipal excedente={true} fichaAutor={false} >
-
-
-        <h1 style={{ color: 'red', fontSize: '32px' }}> Yo debo verme si o si </h1>
-        <h1 style={{ color: 'red', fontSize: '32px' }}> Hola, soy: {process.env.NEXT_PUBLIC_TEST}  </h1>
-        <h1 style={{ color: 'red', fontSize: '32px' }}> Hola, soy: {process.env.TEST} </h1>
 
         <Hero />
 
