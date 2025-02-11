@@ -11,8 +11,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
     useEffect(() => {
         setTokenData()
-         setDatosDelDashboard()
-    }, [])
+        setDatosDelDashboard()
+    }, [setTokenData, setDatosDelDashboard])
 
     return (
         <div className='recursos'>

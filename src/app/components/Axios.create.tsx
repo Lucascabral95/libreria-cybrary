@@ -39,7 +39,7 @@ import axios from 'axios'
 // const PATH = process.env.NEXT_PUBLIC_PATH
 // const MYPATH = process.env.NEXT_PUBLIC_MY_PATH
 const PATH = "https://nest-app-6t3h.onrender.com"
-const MYPATH = "libreria-cybrary.vercel.app"
+// const MYPATH = "libreria-cybrary.vercel.app"
 
 const axiosConToken = axios.create({
     baseURL: PATH,
