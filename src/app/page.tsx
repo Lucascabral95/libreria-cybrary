@@ -15,24 +15,36 @@ import { Product } from '@/common/interfaces/products.interface'
 import Image from 'next/image'
 
 const Home: React.FC = () => {
-  // const [librosDeHarry, setLibrosDeHarry] = useState<ProductWithAuthor[]>([])
-  const [librosDeHarry, ] = useState<ProductWithAuthor[]>([])
-  const [librosDeJuegosDeTronos, setLibrosDeJuegosDeTronos] = useState<ProductWithAuthor[]>([])
+  const [librosDeHarry, setLibrosDeHarry] = useState<ProductWithAuthor[]>([])
+  // const [librosDeJuegosDeTronos, setLibrosDeJuegosDeTronos] = useState<ProductWithAuthor[]>([])
   // const [librosDeStephenKing, setLibrosDeStephenKing] = useState<ProductWithAuthor[]>([])
-  const [librosDeStephenKing, ] = useState<ProductWithAuthor[]>([])
 
   const [productos, setProductos] = useState<Product[]>([])
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //    await obtenerLibrosPorVariosAutores("George R.R. Martin", setLibrosDeJuegosDeTronos, Number(6), setLibrosDeStephenKing, "Stephen King", setLibrosDeHarry, "J.K. Rowling")
+  //   }
+  //   fetchData()
+  // }, [])
 
-    console.log("Llamando a obtenerLibrosPorVariosAutores...");
-    const fetchData = async () => {
-     // await obtenerLibrosPorVariosAutores("George R.R. Martin", setLibrosDeJuegosDeTronos, Number(6), setLibrosDeStephenKing, "Stephen King", setLibrosDeHarry, "J.K. Rowling")
-     await obtenerLibrosPorVariosAutores("George R.R. Martin", setLibrosDeJuegosDeTronos, Number(6))
-    }
+     useEffect(() => {
+        const obtenreDatos = async () => {
+          try {
+             const response = await axios.get('/api/v1/product/with-author?limit=100')
 
-    fetchData()
-  }, [])
+             if (response.status === 200) {
+              setLibrosDeHarry(response.data.filter((a: ProductWithAuthor) => a.name_author === "J.K. Rowling"))
+              console.log(response.data)
+             }
+
+          } catch (error) {
+            console.log(error)
+          }
+        } 
+
+        obtenreDatos()
+}, [])
 
 
   useEffect(() => {
@@ -69,7 +81,7 @@ const Home: React.FC = () => {
 
         <Hero />
 
-        <CategoriaSeccion categoria="Terror" verMas="terror" products={librosDeStephenKing} />
+        {/* <CategoriaSeccion categoria="Terror" verMas="terror" products={librosDeStephenKing} /> */}
 
         <MejorAutor
           autor='Stephen King'
@@ -82,7 +94,7 @@ const Home: React.FC = () => {
 
         <CategoriasRecomendadas />
 
-        <CategoriaSeccion categoria="Juego de Tronos" verMas="fantasia" products={librosDeJuegosDeTronos} />
+        {/* <CategoriaSeccion categoria="Juego de Tronos" verMas="fantasia" products={librosDeJuegosDeTronos} /> */}
 
       </MainPrincipal>
 
