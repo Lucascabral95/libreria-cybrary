@@ -28,7 +28,7 @@ const Home: React.FC = () => {
   useEffect(() => {
     const obtenerProps = async () => {
       try {
-        const response = await axiosConToken(`/proxy/api/v1/product?limit=100`)
+        const response = await axiosConToken(`/api/v1/product?limit=100`)
 
         if (response.status === 200) {
           setProds(response.data)

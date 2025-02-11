@@ -8,7 +8,7 @@ import axios, { isAxiosError } from "axios"
 export const obtenerLibro = async (slug: string | string[], setDataLibro: (libro: ProductWithAuthor[]) => void, setError: (error: Errors) => void) => {
     try {
         // const response = await axiosConToken.get(`${process.env.NEXT_PUBLIC_PATH}/api/v1/product/with-author/${slug}`)
-        const response = await axios.get(`/api/api/product/with-author/${slug}`)
+        const response = await axios.get(`/api/v1/product/with-author/${slug}`)
 
         if (response.status === 200) {
             setDataLibro(response.data)
@@ -147,7 +147,7 @@ export const obtenerLibrosPorSlugCategory = async (slug: string,
     storage: (libros: ProductWithAuthor[]) => void, limit: number, setError: (error: Errors) => void) => {
     try {
         // const response = await axiosConToken.get(`${process.env.NEXT_PUBLIC_PATH}/api/v1/product/with-author/category/${slug}`)
-        const response = await axiosConToken.get(`/api/api/category/${slug}`)
+        const response = await axiosConToken.get(`/api/v1/product/with-author/category/${slug}`)
 
         if (response.status === 200) {
             console.log(response.data)
