@@ -17,7 +17,8 @@ export const actualizarAutor = async (
     storage: Partial<Autor>
 ) => {
     try {
-        const response = await axiosConToken.patch(`${PUBLIC_PATH}/api/v1/author/${id}`, {
+        // const response = await axiosConToken.patch(`${PUBLIC_PATH}/api/v1/author/${id}`, {
+        const response = await axiosConToken.patch(`/api/v1/author/${id}`, {
             name: storage.name,
             birth_date: storage.birth_date,
             nacionality: storage.nacionality,
@@ -41,7 +42,8 @@ export const actualizarCategoria = async (
     storage: Partial<Categorias>
 ) => {
     try {
-        const response = await axiosConToken.patch(`${PUBLIC_PATH}/api/v1/category/${id}`, {
+        // const response = await axiosConToken.patch(`${PUBLIC_PATH}/api/v1/category/${id}`, {
+        const response = await axiosConToken.patch(`/api/v1/category/${id}`, {
             name: storage.name,
             description: storage.description
         })
@@ -63,7 +65,8 @@ export const actualizarProveedor = async (
     storage: Partial<Proveedores>,
 ) => {
     try {
-        const response = await axiosConToken.patch(`${PUBLIC_PATH}/api/v1/supplier/${id}`, {
+        // const response = await axiosConToken.patch(`${PUBLIC_PATH}/api/v1/supplier/${id}`, {
+        const response = await axiosConToken.patch(`/api/v1/supplier/${id}`, {
             name: storage.name,
             contact_email: storage.contact_email,
             contact_phone: storage.contact_phone,
@@ -89,7 +92,8 @@ export const actualizarEmpleado = async (
     storage: Partial<Empleado>,
 ) => {
     try {
-        const response = await axiosConToken.patch(`${PUBLIC_PATH}/api/v1/auth/${id}`, {
+        // const response = await axiosConToken.patch(`${PUBLIC_PATH}/api/v1/auth/${id}`, {
+        const response = await axiosConToken.patch(`/api/v1/auth/${id}`, {
             full_name: storage.full_name,
             email: storage.email,
             is_active: storage.is_active,
@@ -114,7 +118,8 @@ export const actualizarMovimiento = async (
     storage: Partial<StockMovimientos>,
 ) => {
     try {
-        const response = await axiosConToken.patch(`${PUBLIC_PATH}/api/v1/stock-movement/${id}`, {
+        // const response = await axiosConToken.patch(`${PUBLIC_PATH}/api/v1/stock-movement/${id}`, {
+        const response = await axiosConToken.patch(`/api/v1/stock-movement/${id}`, {
             product_id: storage.product_id,
             user_id: storage.user_id,
             movement_type: storage.movement_type,
@@ -152,8 +157,10 @@ export const obtenerSoloMovimiento = async (
 
 export const getDeMovimiento = async (storage: (producto: Product[]) => void, storage2: (empleado: Empleado[]) => void, setError: (error: Errors) => void,) => {
     try {
-        const response = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/product?limit=100`)
-        const response2 = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/auth`)
+        // const response = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/product?limit=100`)
+        // const response2 = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/auth`)
+        const response = await axiosConToken.get(`/api/v1/product?limit=100`)
+        const response2 = await axiosConToken.get(`/api/v1/auth`)
 
         if (response.status === 200) {
             storage(response.data)
@@ -174,7 +181,8 @@ export const actualizarProducto = async (
     storage: Partial<Product>
 ) => {
     try {
-        const response = await axiosConToken.patch(`${PUBLIC_PATH}/api/v1/product/${id}`, {
+        // const response = await axiosConToken.patch(`${PUBLIC_PATH}/api/v1/product/${id}`, {
+        const response = await axiosConToken.patch(`/api/v1/product/${id}`, {
             name: storage.name,
             sku: storage.sku,
             slug: storage.slug,
@@ -213,7 +221,8 @@ export const obtenerProductoPorSlug = async (
     setError: (error: Errors) => void,
 ) => {
     try {
-        const response = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/product/${id}`)
+        // const response = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/product/${id}`)
+        const response = await axiosConToken.get(`/api/v1/product/${id}`)
 
         if (response.status === 200) {
             storage(response.data[0])
@@ -230,9 +239,12 @@ export const recursosDeProductos = async (
     setError: (error: Errors) => void
 ) => {
     try {
-        const response = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/supplier?limit=100`)
-        const response2 = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/category?limit=100`)
-        const response3 = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/author?limit=100`)
+        // const response = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/supplier?limit=100`)
+        // const response2 = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/category?limit=100`)
+        // const response3 = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/author?limit=100`)
+        const response = await axiosConToken.get(`/api/v1/supplier?limit=100`)
+        const response2 = await axiosConToken.get(`/api/v1/category?limit=100`)
+        const response3 = await axiosConToken.get(`/api/v1/author?limit=100`)
 
         if (response.status === 200) {
             storage(response.data)

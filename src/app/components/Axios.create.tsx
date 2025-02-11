@@ -40,7 +40,7 @@ import axios from 'axios'
 const MYPATH = process.env.NEXT_PUBLIC_MY_PATH
 
 const axiosConToken = axios.create({
-    baseURL: "/proxy",
+    baseURL: "/proxy/",
     withCredentials: true,
 })
 

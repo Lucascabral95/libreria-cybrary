@@ -6,7 +6,8 @@ const PUBLIC_PATH = process.env.NEXT_PUBLIC_PATH;
 
 export const eliminarCategoria = async (id: number) => {
     try {
-        const response = await axiosConToken.delete(`${PUBLIC_PATH}/api/v1/category/${id}`)
+        // const response = await axiosConToken.delete(`${PUBLIC_PATH}/api/v1/category/${id}`)
+        const response = await axiosConToken.delete(`/api/v1/category/${id}`)
 
         if (response.status === 200) {
             toast.success('Categoria eliminada', {
@@ -35,7 +36,8 @@ export const eliminarCategoria = async (id: number) => {
 
 export const eliminarProducto = async (id: number) => {
     try {
-        const response = await axiosConToken.delete(`${PUBLIC_PATH}/api/v1/product/${id}`)
+        // const response = await axiosConToken.delete(`${PUBLIC_PATH}/api/v1/product/${id}`)
+        const response = await axiosConToken.delete(`/api/v1/product/${id}`)
 
         if (response.status === 200) {
             toast.success('Producto eliminado', {
@@ -64,7 +66,8 @@ export const eliminarProducto = async (id: number) => {
 
 export const eliminarProveedor = async (id: number) => {
     try {
-        const response = await axiosConToken.delete(`${PUBLIC_PATH}/api/v1/supplier/${id}`)
+        // const response = await axiosConToken.delete(`${PUBLIC_PATH}/api/v1/supplier/${id}`)
+        const response = await axiosConToken.delete(`/api/v1/supplier/${id}`)
 
         if (response.status === 200) {
             toast.success('Proveedor eliminado', {
@@ -93,7 +96,8 @@ export const eliminarProveedor = async (id: number) => {
 
 export const eliminarAutor = async (id: number) => {
     try {
-        const response = await axiosConToken.delete(`${PUBLIC_PATH}/api/v1/author/${id}`)
+        // const response = await axiosConToken.delete(`${PUBLIC_PATH}/api/v1/author/${id}`)
+        const response = await axiosConToken.delete(`/api/v1/author/${id}`)
 
         if (response.status === 200) {
             toast.success('Autor eliminado', {
@@ -122,7 +126,8 @@ export const eliminarAutor = async (id: number) => {
 
 export const eliminarMovimiento = async (id: number) => {
     try {
-        const response = await axiosConToken.delete(`${PUBLIC_PATH}/api/v1/stock-movement/${id}`)
+        // const response = await axiosConToken.delete(`${PUBLIC_PATH}/api/v1/stock-movement/${id}`)
+        const response = await axiosConToken.delete(`/api/v1/stock-movement/${id}`)
 
         if (response.status === 200) {
             toast.success('Movimiento eliminado', {
@@ -151,7 +156,8 @@ export const eliminarMovimiento = async (id: number) => {
 
 export const eliminarEmpleado = async (id: number) => {
     try {
-        const response = await axiosConToken.delete(`${PUBLIC_PATH}/api/v1/auth/${id}`)
+        // const response = await axiosConToken.delete(`${PUBLIC_PATH}/api/v1/auth/${id}`)
+        const response = await axiosConToken.delete(`/api/v1/auth/${id}`)
 
         if (response.status === 200) {
             toast.success('Empleado eliminado', {

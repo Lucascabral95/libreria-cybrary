@@ -3,12 +3,11 @@ import { catchError } from "@/app/components/Recursos/utils/obtencionDetallesRec
 import { Errors } from "@/common/interfaces/errors.interface"
 import { ProductWithAuthor } from "@/common/interfaces/products-with-author-interface"
 import { Product } from "@/common/interfaces/products.interface"
-import axios, { isAxiosError } from "axios"
+import { isAxiosError } from "axios"
 
 export const obtenerLibro = async (slug: string | string[], setDataLibro: (libro: ProductWithAuthor[]) => void, setError: (error: Errors) => void) => {
     try {
-        // const response = await axiosConToken.get(`${process.env.NEXT_PUBLIC_PATH}/api/v1/product/with-author/${slug}`)
-        const response = await axios.get(`/api/v1/product/with-author/${slug}`)
+        const response = await axiosConToken.get(`/api/v1/product/with-author/${slug}`)
 
         if (response.status === 200) {
             setDataLibro(response.data)
@@ -25,7 +24,7 @@ export const obtenerLibro = async (slug: string | string[], setDataLibro: (libro
 export const obtenerLibrosPorCategoria = async (slug: string, setLibrosCategoria: (libros: ProductWithAuthor[]) => void,
     setError: (error: Errors) => void, setLoading: (loading: boolean) => void) => {
     try {
-        const response = await axiosConToken.get(`${process.env.NEXT_PUBLIC_PATH}/api/v1/product/with-author`)
+        const response = await axiosConToken.get(`/api/v1/product/with-author`)
 
         const librosFiltrados = response.data.filter((a: ProductWithAuthor) => a.slug_category === slug)
 
@@ -49,7 +48,7 @@ export const obtenerLibrosPorCategoria = async (slug: string, setLibrosCategoria
 
 export const obtenerLibrosPorInclude = async (busqueda: string, storage: (libros: ProductWithAuthor[]) => void, limit: number) => {
     try {
-        const response = await axiosConToken.get(`${process.env.NEXT_PUBLIC_PATH}/api/v1/product/with-author`)
+        const response = await axiosConToken.get(`/api/v1/product/with-author`)
 
         if (response.status === 200) {
 
@@ -68,7 +67,7 @@ export const obtenerLibrosPorInclude = async (busqueda: string, storage: (libros
 
 export const obtenerLibrosPorUnAutor = async (autor: string, storage: (libros: ProductWithAuthor[]) => void, limit: number) => {
     try {
-        const response = await axiosConToken.get(`${process.env.NEXT_PUBLIC_PATH}/api/v1/product/with-author`)
+        const response = await axiosConToken.get(`/api/v1/product/with-author`)
 
         if (response.status === 200) {
             const librosFiltrados = response.data.filter((a: ProductWithAuthor) => a.name_author === autor).slice(0, limit)
@@ -94,7 +93,6 @@ export const obtenerLibrosPorVariosAutores = async (
     autor3?: string,
 ) => {
     try {
-        // const response = await axios.get(`/api/api/product/with-author`);
         const response = await axiosConToken.get(`/api/v1/product/with-author`);
 
         if (response.status === 200) {
@@ -126,8 +124,7 @@ export const obtenerLibrosPorVariosAutores = async (
 
 export const obtenerLibrosPorBuscador = async (busqueda: string) => {
     try {
-        // const response = await axiosConToken.get(`${process.env.NEXT_PUBLIC_PATH}/api/v1/product/with-author`)
-        const response = await axiosConToken.get(`${process.env.NEXT_PUBLIC_PATH}/api/v1/product/with-author`)
+        const response = await axiosConToken.get(`/api/v1/product/with-author`)
 
         if (response.status === 200) {
             const filtroLibros = response.data.filter((a: ProductWithAuthor) => a.name.includes(busqueda) || a.name_author.includes(busqueda) || a.slug_category.includes(busqueda) || a.publication_date.includes(busqueda))
@@ -146,7 +143,6 @@ export const obtenerLibrosPorBuscador = async (busqueda: string) => {
 export const obtenerLibrosPorSlugCategory = async (slug: string,
     storage: (libros: ProductWithAuthor[]) => void, limit: number, setError: (error: Errors) => void) => {
     try {
-        // const response = await axiosConToken.get(`${process.env.NEXT_PUBLIC_PATH}/api/v1/product/with-author/category/${slug}`)
         const response = await axiosConToken.get(`/api/v1/product/with-author/category/${slug}`)
 
         if (response.status === 200) {
@@ -174,7 +170,7 @@ export const obtenerTodosLosLibros = async (
     setLoading?: (loading: boolean) => void
 ) => {
     try {
-        const response = await axiosConToken.get(`${process.env.NEXT_PUBLIC_PATH}/api/v1/product?limit=100`)
+        const response = await axiosConToken.get(`/api/v1/product?limit=100`)
 
         if (response.status === 200) {
             const librosFiltrados = response.data.filter((item: Product) => item.name.toLowerCase().includes(input) || item.author.toLowerCase().includes(input))
@@ -203,7 +199,7 @@ export const obtenerLosMejoresLibrosHasta100 = async (
     setLoading: (loading: boolean) => void,
 ) => {
     try {
-        const response = await axiosConToken.get(`${process.env.NEXT_PUBLIC_PATH}/api/v1/product?limit=100`)
+        const response = await axiosConToken.get(`/api/v1/product?limit=100`)
 
         if (response.status === 200) {
             const librosFiltrados = response.data.slice(0, 100)
