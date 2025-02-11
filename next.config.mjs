@@ -25,7 +25,7 @@ const nextConfig = {
         return [
             {
                 source: "/proxy/:path*",
-                destination: "https://nest-app-6t3h.onrender.com/api/v1/product/with-author/:path*",
+                destination: "https://nest-app-6t3h.onrender.com/:path*",
             },
         ];
     },

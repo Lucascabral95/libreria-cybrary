@@ -94,7 +94,8 @@ export const obtenerLibrosPorVariosAutores = async (
     autor3?: string,
 ) => {
     try {
-        const response = await axios.get(`/api/api/product/with-author`);
+        // const response = await axios.get(`/api/api/product/with-author`);
+        const response = await axiosConToken.get(`/api/v1/product/with-author`);
 
         if (response.status === 200) {
             const librosFiltrados = response.data
@@ -125,6 +126,7 @@ export const obtenerLibrosPorVariosAutores = async (
 
 export const obtenerLibrosPorBuscador = async (busqueda: string) => {
     try {
+        // const response = await axiosConToken.get(`${process.env.NEXT_PUBLIC_PATH}/api/v1/product/with-author`)
         const response = await axiosConToken.get(`${process.env.NEXT_PUBLIC_PATH}/api/v1/product/with-author`)
 
         if (response.status === 200) {
