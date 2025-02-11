@@ -27,6 +27,11 @@ const Home: React.FC = () => {
 
       <MainPrincipal excedente={true} fichaAutor={false} >
 
+
+        <h1 style={{ color: 'red', fontSize: '32px' }}> Yo debo verme si o si </h1>
+        <h1 style={{ color: 'red', fontSize: '32px' }}> Hola, soy: {process.env.NEXT_PUBLIC_TEST}  </h1>
+        <h1 style={{ color: 'red', fontSize: '32px' }}> Hola, soy: {process.env.TEST} </h1>
+
         <Hero />
 
         <CategoriaSeccion categoria="Terror" verMas="terror" products={librosDeStephenKing} />
