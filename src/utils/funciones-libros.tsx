@@ -175,7 +175,6 @@ export const obtenerTodosLosLibros = async (
         if (response.status === 200) {
             const librosFiltrados = response.data.filter((item: Product) => item.name.toLowerCase().includes(input) || item.author.toLowerCase().includes(input))
             storage(librosFiltrados)
-            // setLoading && setLoading(false)
             setLoading?.(false);
         }
 
@@ -188,7 +187,6 @@ export const obtenerTodosLosLibros = async (
             }
         }
     } finally {
-        // setLoading && setLoading(false)
         setLoading?.(false);
     }
 }

@@ -5,7 +5,6 @@ import { isAxiosError } from "axios"
 
 export const obtenerCategoria = async (slug: string | string[], setDataCategoria: (categoria: Categorias) => void, setError: (error: Errors) => void, setLoading: (loading: boolean) => void) => {
     try {
-        // const response = await axiosConToken.get(`${process.env.NEXT_PUBLIC_PATH}/api/v1/category/${slug}`)
         const response = await axiosConToken.get(`/api/v1/category/${slug}`)
         if (response.status === 200) {
             setDataCategoria(response.data[0])

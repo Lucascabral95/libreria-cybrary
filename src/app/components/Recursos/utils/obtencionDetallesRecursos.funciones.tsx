@@ -10,7 +10,6 @@ import axiosConToken from '../../Axios.create'
 
 export const obtenerDetalleDelLibro = async (slug: string, storage: (libro: ProductWithAuthor) => void, setError: (error: Errors) => void, loading: (loading: boolean) => void) => {
     try {
-        // const response = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/product/with-author/${slug}`)
         const response = await axiosConToken.get(`/api/v1/product/with-author/${slug}`)
 
         if (response.status === 200) {
@@ -27,7 +26,6 @@ export const obtenerDetalleDelLibro = async (slug: string, storage: (libro: Prod
 
 export const obtenerDetalleDeLaCategoria = async (slug: string, storage: (categoria: Categorias) => void, setError: (error: Errors) => void, loading: (loading: boolean) => void) => {
     try {
-        // const response = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/category/${slug}`)
         const response = await axiosConToken.get(`/api/v1/category/${slug}`)
 
         if (response.status === 200) {
@@ -44,7 +42,6 @@ export const obtenerDetalleDeLaCategoria = async (slug: string, storage: (catego
 
 export const obtenerDetalleDelAutor = async (slug: string, storage: (autor: Autor) => void, setError: (error: Errors) => void, loading: (loading: boolean) => void) => {
     try {
-        // const response = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/author/${slug}`)
         const response = await axiosConToken.get(`/api/v1/author/${slug}`)
 
         if (response.status === 200) {
@@ -61,7 +58,6 @@ export const obtenerDetalleDelAutor = async (slug: string, storage: (autor: Auto
 
 export const obtenerDetalleDelProveedor = async (id: number, storage: (proveedor: Proveedores) => void, setError: (error: Errors) => void, loading: (loading: boolean) => void) => {
     try {
-        // const response = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/supplier/${Number(id)}`)
         const response = await axiosConToken.get(`/api/v1/supplier/${Number(id)}`)
 
         if (response.status === 200) {
@@ -78,7 +74,6 @@ export const obtenerDetalleDelProveedor = async (id: number, storage: (proveedor
 
 export const obtenerDetalleDelEmpleado = async (id: number, storage: (empleado: Empleado) => void, setError: (error: Errors) => void, loading: (loading: boolean) => void) => {
     try {
-        // const response = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/auth/${Number(id)}`)
         const response = await axiosConToken.get(`/api/v1/auth/${Number(id)}`)
 
         if (response.status === 200) {
@@ -95,7 +90,6 @@ export const obtenerDetalleDelEmpleado = async (id: number, storage: (empleado: 
 
 export const obtenerDetalleDelMovimiento = async (id: number, storage: (empleado: StockMovimientosWithUsuarioYProducto) => void, setError: (error: Errors) => void, loading: (loading: boolean) => void) => {
     try {
-        // const response = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/stock-movement/with/user/product/${Number(id)}`)
         const response = await axiosConToken.get(`/api/v1/stock-movement/with/user/product/${Number(id)}`)
 
         if (response.status === 200) {

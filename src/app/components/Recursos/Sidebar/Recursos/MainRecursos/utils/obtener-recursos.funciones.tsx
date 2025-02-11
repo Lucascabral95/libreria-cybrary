@@ -18,8 +18,6 @@ export const obtenerProductos = async (
     setLoading: (loading: boolean) => void,
 ) => {
     try {
-        // const response = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/product?limit=${limit}&offset=${numeroPagina}`)
-        // const response2 = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/product/count`)
         const response = await axiosConToken.get(`/api/v1/product?limit=${limit}&offset=${numeroPagina}`)
         const response2 = await axiosConToken.get(`/api/v1/product/count`)
 
@@ -45,8 +43,6 @@ export const obtenerCategorias = async (
     setError: (error: Errors) => void
 ) => {
     try {
-        // const response = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/category?limit=${limit}&offset=${numeroPagina}`)
-        // const response2 = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/category/count`)
         const response = await axiosConToken.get(`/api/v1/category?limit=${limit}&offset=${numeroPagina}`)
         const response2 = await axiosConToken.get(`/api/v1/category/count`)
 
@@ -72,8 +68,6 @@ export const obtenerAutores = async (
     setLoading: (loading: boolean) => void,
 ) => {
     try {
-        // const response = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/author?limit=${limit}&offset=${numeroPagina}`)
-        // const response2 = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/author/count`)
         const response = await axiosConToken.get(`/api/v1/author?limit=${limit}&offset=${numeroPagina}`)
         const response2 = await axiosConToken.get(`/api/v1/author/count`)
 
@@ -99,8 +93,6 @@ export const obtenerProveedores = async (
     setError: (error: Errors) => void,
 ) => {
     try {
-        // const response = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/supplier?limit=${limit}&offset=${numeroPagina}`)
-        // const response2 = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/supplier/count`)
         const response = await axiosConToken.get(`/api/v1/supplier?limit=${limit}&offset=${numeroPagina}`)
         const response2 = await axiosConToken.get(`/api/v1/supplier/count`)
 
@@ -121,7 +113,6 @@ export const obtenerEmpleados = async (
     storage: (empleado: Empleado[]) => void,
 ) => {
     try {
-        // const response = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/auth`)
         const response = await axiosConToken.get(`/api/v1/auth`)
 
         if (response.status === 200) {
@@ -145,7 +136,6 @@ export const obtenerMovimientosConProductos = async (
     setLoading: (loading: boolean) => void
 ) => {
     try {
-        // const response = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/stock-movement/with/user/product`)
         const response = await axiosConToken.get(`/api/v1/stock-movement/with/user/product`)
 
         if (response.status === 200) {

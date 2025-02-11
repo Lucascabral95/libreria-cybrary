@@ -8,15 +8,13 @@ import toast from "react-hot-toast"
 import axiosConToken from "../../Axios.create"
 import { CreacionProducto } from "@/common/interfaces/creacion/Producto-creacion.interface"
 
-const PATH_PUBLIC = process.env.NEXT_PUBLIC_PATH
-
 export const crearStockMovimiento = async (
     setError: (error: Errors) => void,
     data: CreacionMovimientoDeStock,
     setData: React.Dispatch<React.SetStateAction<CreacionMovimientoDeStock>>
 ) => {
     try {
-        const response = await axiosConToken.post(`${PATH_PUBLIC}/api/v1/stock-movement`, {
+        const response = await axiosConToken.post(`/api/v1/stock-movement`, {
             product_id: data.product_id,
             user_id: data.user_id,
             movement_type: data.movement_type,
@@ -45,7 +43,7 @@ export const crearProducto = async (
     setPreview: React.Dispatch<React.SetStateAction<string | null>>
 ) => {
     try {
-        const response = await axiosConToken.post(`${PATH_PUBLIC}/api/v1/product`, formData, {
+        const response = await axiosConToken.post(`/api/v1/product`, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data',
             },
@@ -71,7 +69,7 @@ export const crearCategoria = async (
     setData: React.Dispatch<React.SetStateAction<CreacionCategoria>>
 ) => {
     try {
-        const response = await axiosConToken.post(`${PATH_PUBLIC}/api/v1/category`, {
+        const response = await axiosConToken.post(`/api/v1/category`, {
             name: data.name,
             description: data.description
         });
@@ -97,7 +95,7 @@ export const crearProveedor = async (
     setData: React.Dispatch<React.SetStateAction<CreacionProveedor>>
 ) => {
     try {
-        const response = await axiosConToken.post(`${PATH_PUBLIC}/api/v1/supplier`, {
+        const response = await axiosConToken.post(`/api/v1/supplier`, {
             name: data.name,
             sector: data.sector,
             contact_email: data.contact_email,
@@ -129,7 +127,7 @@ export const crearAutor = async (
     setPreview: React.Dispatch<React.SetStateAction<string | null>>
 ) => {
     try {
-        const response = await axiosConToken.post(`${PATH_PUBLIC}/api/v1/author`, formData, {
+        const response = await axiosConToken.post(`/api/v1/author`, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data',
             },

@@ -7,7 +7,6 @@ import axiosConToken from "@/app/components/Axios.create"
 export const obtenerLibrosDelAutor = async (slug: string | string[], librosDelAutor: (autor: ProductWithAuthor[]) => void,
     setError: (error: Errors) => void, loading: (loading: boolean) => void) => {
     try {
-        // const response = await axiosConToken.get(`${process.env.NEXT_PUBLIC_PATH_EXTERNAL}/api/v1/product/with-author`)
         const response = await axiosConToken.get(`/api/v1/product/with-author`)
 
         if (response.status === 200) {
@@ -38,7 +37,6 @@ export const obtenerLibrosDelAutor = async (slug: string | string[], librosDelAu
 
 export const obtenerAutorPorSlug = async  ( slug: string, datosDelAutor: (autor: Autor) => void, setError: (error: Errors) => void, loading: (loading: boolean) => void ) => {
     try {
-        // const response = await axiosConToken.get(`${process.env.NEXT_PUBLIC_PATH}/api/v1/author/${slug}`)
         const response = await axiosConToken.get(`/api/v1/author/${slug}`)
     
         if(response.status === 200) {
