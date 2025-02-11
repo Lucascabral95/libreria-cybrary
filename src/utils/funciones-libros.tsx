@@ -93,7 +93,6 @@ export const obtenerLibrosPorVariosAutores = async (
     autor3?: string,
 ) => {
     try {
-        // const response = await axiosConToken.get(`${process.env.NEXT_PUBLIC_PATH}/api/v1/product/with-author`);
         const response = await axios.get(`/api/api/test`);
 
         if (response.status === 200) {
@@ -166,9 +165,9 @@ export const obtenerLibrosPorSlugCategory = async (slug: string,
 }
 
 export const obtenerTodosLosLibros = async (
-    input: string, 
-    storage: (libros: Product[] ) => void,
-    setLoading?: (loading: boolean) => void 
+    input: string,
+    storage: (libros: Product[]) => void,
+    setLoading?: (loading: boolean) => void
 ) => {
     try {
         const response = await axiosConToken.get(`${process.env.NEXT_PUBLIC_PATH}/api/v1/product?limit=100`)

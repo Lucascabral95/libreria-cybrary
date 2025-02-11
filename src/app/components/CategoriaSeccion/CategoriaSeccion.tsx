@@ -28,20 +28,20 @@ const CategoriaSeccion: React.FC<CategoryProps> = ({ categoria, verMas, products
       } else {
         setElementosAMostrar(2);
       }
-  
+
       setCantidadPaginas(products.length - elementosAMostrar + 1);
-      setPaginaActual(1); 
-      setElementoActual(0); 
+      setPaginaActual(1);
+      setElementoActual(0);
     };
 
-    resizeHandler(); 
+    resizeHandler();
 
     window.addEventListener("resize", resizeHandler);
 
     return () => {
       window.removeEventListener("resize", resizeHandler);
     };
-  }, [elementosAMostrar, products]); 
+  }, [elementosAMostrar, products]);
 
   const anterior = () => {
     if (paginaActual > 1) {
@@ -62,7 +62,7 @@ const CategoriaSeccion: React.FC<CategoryProps> = ({ categoria, verMas, products
       <div className='contenedor-seccion-categoria'>
         <div className="categoria">
           <div className="contenedor-de-categoria">
-            <h2> {categoria} </h2> 
+            <h2> {categoria} </h2>
             <Link href={`/libro/categoria/${verMas}`} className='vermas'> Ver más </Link>
           </div>
 
@@ -71,10 +71,7 @@ const CategoriaSeccion: React.FC<CategoryProps> = ({ categoria, verMas, products
               <div className="libro" key={index}>
                 <div className="parte-superior">
                   <Link href={`/libro/${item.slug}`} className="portada">
-                    <Image src={`${process.env.NEXT_PUBLIC_PATH}/api/v1/product/image/product/${item.image}`} alt={item.name} width={164.86} height={251.33} className='imagen' />
-                   
-                    {/* <img src={`http:localhost:4000/api/v1/product/image/product/${item.image}`} alt={item.name} width={164.86} height={251.33} className='imagen' /> */}
-                   
+                    <Image src={`https://nest-app-6t3h.onrender.com/api/v1/product/image/product/${item.image}`} alt={item.name} width={164.86} height={251.33} className='imagen' />
                   </Link>
                   <div className="tapa">
                     <p> Tapa blanda </p>
@@ -100,16 +97,16 @@ const CategoriaSeccion: React.FC<CategoryProps> = ({ categoria, verMas, products
 
           <div className="botones-siguiente-anterior">
             <div className="contenedor-botones">
-              <div 
-                className="boton-izquierdo" 
-                onClick={anterior} 
+              <div
+                className="boton-izquierdo"
+                onClick={anterior}
                 style={{ cursor: paginaActual === 1 ? "not-allowed" : "pointer" }}
               >
                 <MdKeyboardArrowLeft className='icono' style={{ color: paginaActual === 1 ? "rgba(0, 77, 67, 0.2)" : "var(--color-circulo)" }} />
               </div>
-              <div 
-                className="boton-derecho" 
-                onClick={siguiente} 
+              <div
+                className="boton-derecho"
+                onClick={siguiente}
                 style={{ display: paginaActual === cantidadPaginas ? "none" : "flex", cursor: paginaActual === cantidadPaginas ? "not-allowed" : "pointer" }}
               >
                 <MdKeyboardArrowRight className='icono' style={{ color: paginaActual === cantidadPaginas ? "rgba(0, 77, 67, 0.2)" : "var(--color-circulo)" }} />
