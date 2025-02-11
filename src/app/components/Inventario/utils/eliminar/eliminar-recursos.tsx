@@ -2,8 +2,6 @@ import axiosConToken from "@/app/components/Axios.create";
 import { isAxiosError } from "axios"
 import { toast } from "react-hot-toast";
 
-const PUBLIC_PATH = process.env.NEXT_PUBLIC_PATH;
-
 export const eliminarCategoria = async (id: number) => {
     try {
         // const response = await axiosConToken.delete(`${PUBLIC_PATH}/api/v1/category/${id}`)
