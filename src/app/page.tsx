@@ -10,7 +10,7 @@ import { obtenerLibrosPorVariosAutores } from '@/utils/funciones-libros'
 import { ProductWithAuthor } from '@/common/interfaces/products-with-author-interface'
 import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header'
-import axios from 'axios'
+import axiosConToken from './components/Axios.create'
 
 const Home: React.FC = () => {
   const [librosDeHarry, setLibrosDeHarry] = useState<ProductWithAuthor[]>([])
@@ -28,12 +28,7 @@ const Home: React.FC = () => {
   useEffect(() => {
     const obtenerProps = async () => {
       try {
-        const response = await axios.get(`/productos/con-autor`, {
-          // withCredentials: true,
-          headers: {
-            "Content-Type": "application/json",
-          }
-        })
+        const response = await axiosConToken(`/proxy/api/v1/product?limit=100`)
 
         if (response.status === 200) {
           setProds(response.data)

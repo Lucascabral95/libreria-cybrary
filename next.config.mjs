@@ -24,8 +24,8 @@ const nextConfig = {
     async rewrites() {
         return [
             {
-                source: "/productos/con-autor",
-                destination: "https://nest-app-6t3h.onrender.com/api/v1/product/with-author",
+                source: "/proxy/:path*",
+                destination: "https://nest-app-6t3h.onrender.com/api/v1/product/with-author/:path*",
             },
         ];
     },
