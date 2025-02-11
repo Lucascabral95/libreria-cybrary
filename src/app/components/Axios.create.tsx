@@ -58,7 +58,8 @@ const obtenerToken = async () => {
 
 axiosConToken.interceptors.request.use(
     async (config) => {
-        const token = await obtenerToken()
+        // const token = await obtenerToken()
+        const token = ''
 
         if (token) {
             config.headers.Authorization = `Bearer ${token}`
