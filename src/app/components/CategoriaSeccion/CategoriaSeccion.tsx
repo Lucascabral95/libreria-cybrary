@@ -71,7 +71,7 @@ const CategoriaSeccion: React.FC<CategoryProps> = ({ categoria, verMas, products
               <div className="libro" key={index}>
                 <div className="parte-superior">
                   <Link href={`/libro/${item.slug}`} className="portada">
-                    <Image src={`https://nest-app-6t3h.onrender.com/api/v1/product/image/product/${item.image}`} alt={item.name} width={164.86} height={251.33} className='imagen' />
+                    <Image src={`${process.env.NEXT_PUBLIC_PATH_EXTERNAL}/api/v1/product/image/product/${item.image}`} alt={item.name} width={164.86} height={251.33} className='imagen' />
                   </Link>
                   <div className="tapa">
                     <p> Tapa blanda </p>
