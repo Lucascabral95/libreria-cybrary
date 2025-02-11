@@ -20,10 +20,13 @@ export async function GET( req: NextRequest, { params }: { params: { slug: strin
         }
 
     } catch (error) {
-        if (error instanceof Error) {
-            if ( isAxiosError(error)) {
-                console.log(error.response?.data)
-            }
-        }
+        if (isAxiosError(error)) {
+            const status = error.response?.status || 500;  
+            const message = error.response?.data?.message || "Internal Server Error"; 
+      
+            return NextResponse.json({ error: message }, { status });
+          }
+      
+          return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
     }
 }

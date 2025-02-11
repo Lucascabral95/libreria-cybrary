@@ -144,7 +144,8 @@ export const obtenerLibrosPorBuscador = async (busqueda: string) => {
 export const obtenerLibrosPorSlugCategory = async (slug: string,
     storage: (libros: ProductWithAuthor[]) => void, limit: number, setError: (error: Errors) => void) => {
     try {
-        const response = await axiosConToken.get(`${process.env.NEXT_PUBLIC_PATH}/api/v1/product/with-author/category/${slug}`)
+        // const response = await axiosConToken.get(`${process.env.NEXT_PUBLIC_PATH}/api/v1/product/with-author/category/${slug}`)
+        const response = await axiosConToken.get(`/api/api/category/${slug}`)
 
         if (response.status === 200) {
             console.log(response.data)

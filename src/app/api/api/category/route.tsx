@@ -7,7 +7,7 @@ export async function GET( req: NextRequest ) {
 
     try {
 
-        const response = await axios.get(`${PATH}/api/v1/product/with-author`, {
+        const response = await axios.get(`${PATH}/api/v1/category`, {
             withCredentials: true,
             headers: {
                 Authorization: `Bearer ${token}`,
