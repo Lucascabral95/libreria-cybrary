@@ -8,7 +8,6 @@ import { Errors } from "./common/interfaces/errors.interface";
 import { catchError } from "./app/components/Recursos/utils/obtencionDetallesRecursos.funciones";
 
 const MYPATH = process.env.NEXT_PUBLIC_MY_PATH
-const PUBLIC_PATH = process.env.NEXT_PUBLIC_PATH
 
 interface ZustandState {
   seccionActual: SeccionActual,
@@ -46,7 +45,7 @@ const useStoreZustand = create<ZustandState>((set) => ({
   errorDatosDashboard: {} as Errors,
   setDatosDelDashboard: async () => {
     try {
-      const response = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/stock-movement/inventory/resources`)
+      const response = await axiosConToken.get(`/api/v1/stock-movement/inventory/resources`)
       if (response.status === 200) {
         set({ datosDashbord: response.data })
         set({ loadingDatosDashboard: false })
