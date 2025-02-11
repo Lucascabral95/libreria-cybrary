@@ -94,7 +94,7 @@ export const obtenerLibrosPorVariosAutores = async (
 ) => {
     try {
         // const response = await axios.get(`/api/api/test`);
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_PATH_EXTERNAL}/api/v1/product/with-author`);
+        const response = await axios.get(`https://nest-app-6t3h.onrender.com/api/v1/product/with-author`);
 
         if (response.status === 200) {
             const librosFiltrados = response.data
