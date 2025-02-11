@@ -28,7 +28,7 @@ const Home: React.FC = () => {
   useEffect(() => {
     const obtenerProps = async () => {
       try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_PATH_EXTERNAL}/api/v1/product/with-author`, {
+        const response = await axios.get(`/productos/con-autor`, {
           // withCredentials: true,
           headers: {
             "Content-Type": "application/json",
