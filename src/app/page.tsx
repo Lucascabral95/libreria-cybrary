@@ -50,7 +50,8 @@ const Home: React.FC = () => {
   useEffect(() => {
     const obtenerProductos = async () => {
       try {
-        const response = await axios.get('/api/api/test')
+        // const response = await axios.get('/api/api/test')
+        const response = await axios.get('https://nest-app-6t3h.onrender.com/api/v1/product')
 
         if (response.status === 200) {
           console.log(response)
