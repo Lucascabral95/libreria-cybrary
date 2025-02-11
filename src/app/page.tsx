@@ -10,6 +10,7 @@ import { obtenerLibrosPorVariosAutores } from '@/utils/funciones-libros'
 import { ProductWithAuthor } from '@/common/interfaces/products-with-author-interface'
 import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header'
+import axios from 'axios'
 
 const Home: React.FC = () => {
   const [librosDeHarry, setLibrosDeHarry] = useState<ProductWithAuthor[]>([])
@@ -20,10 +21,39 @@ const Home: React.FC = () => {
     obtenerLibrosPorVariosAutores("George R.R. Martin", setLibrosDeJuegosDeTronos, Number(6), setLibrosDeStephenKing, "Stephen King", setLibrosDeHarry, "J.K. Rowling")
   }, [])
 
+
+
+  const [prods, setProds] = useState<ProductWithAuthor[]>([])
+
+  useEffect(() => {
+    const obtenerProps = async () => {
+      try {
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_PATH_EXTERNAL}/api/v1/product/with-author`)
+
+        if (response.status === 200) {
+          setProds(response.data)
+          console.log(response.data)
+        }
+
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    obtenerProps()
+  }, [])
+
   return (
     <>
 
       <Header />
+
+      {prods.map((item, index) => (
+        <div key={index}>
+          <p> Libro: {item.name} </p>
+          <p> Nombre del autor: {item.name_author} </p>
+        </div>
+      ))}
 
       <MainPrincipal excedente={true} fichaAutor={false} >
 
