@@ -50,7 +50,7 @@ const LibrosPorAutor: React.FC = () => {
 
                                 <div className='contenedor-de-autor'>
                                     <div className="imagen-de-autor">
-                                         <Image src={`${process.env.NEXT_PUBLIC_PATH}/api/v1/author/image/author/${datosDelAutor?.image}`} alt={`${datosDelAutor?.name}`} width={220} height={220} className='img' />
+                                         <Image src={`${process.env.NEXT_PUBLIC_PATH_EXTERNAL}/api/v1/author/image/author/${datosDelAutor?.image}`} alt={`${datosDelAutor?.name}`} width={220} height={220} className='img' />
                                     </div>
                                     <div className="contenido-autor">
                                         <div className="titulo">

@@ -48,7 +48,7 @@ const Autores = () => {
           (
             <tr onClick={() => window.location.href = `/api/auth/recursos/inventario/autor/${item.slug}`} key={index}>
               <td style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Image className='imagen-del-autor-table' width={32} height={32} alt={item.name} src={`${process.env.NEXT_PUBLIC_PATH}/api/v1/author/image/author/${item.image}`} />
+                <Image className='imagen-del-autor-table' width={32} height={32} alt={item.name} src={`${process.env.NEXT_PUBLIC_PATH_EXTERNAL}/api/v1/author/image/author/${item.image}`} />
               </td>
               <td> {item.name} </td>
               <td> {item.nacionality} </td>

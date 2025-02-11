@@ -86,7 +86,7 @@ const AutorDetalleC: React.FC<ProductoProps> = ({ title, producto }) => {
                     </div>
                     <div className="valor">
                         <p className='foto-foto'>
-                            <Image className='foto-imagen' src={`${process.env.NEXT_PUBLIC_PATH}/api/v1/author/image/author/${data?.image}`} alt={data?.name as string} width={320} height={160} />
+                            <Image className='foto-imagen' src={`${process.env.NEXT_PUBLIC_PATH_EXTERNAL}/api/v1/author/image/author/${data?.image}`} alt={data?.name as string} width={320} height={160} />
                         </p>
                     </div>
                 </div>

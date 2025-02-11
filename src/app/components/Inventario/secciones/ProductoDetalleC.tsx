@@ -114,7 +114,7 @@ const ProductoDetalleC: React.FC<CategoriaProps> = ({ title, producto }) => {
                         </div>
                         <div className="valor">
                             <div className="foto-foto">
-                                <Image className='foto-imagen-producto' src={`${process.env.NEXT_PUBLIC_PATH}/api/v1/product/image/product/${data?.image}`} alt={libroSeleccionadoData?.name as string} width={150} height={320} />
+                                <Image className='foto-imagen-producto' src={`${process.env.NEXT_PUBLIC_PATH_EXTERNAL}/api/v1/product/image/product/${data?.image}`} alt={libroSeleccionadoData?.name as string} width={150} height={320} />
                             </div>
                         </div>
                     </div>
@@ -222,7 +222,7 @@ const ProductoDetalleC: React.FC<CategoriaProps> = ({ title, producto }) => {
                     </div>
                     <div className="valor">
                         <div className="foto-foto">
-                            <Image className='foto-imagen-producto' src={`${process.env.NEXT_PUBLIC_PATH}/api/v1/author/image/author/${data?.image_author}`} alt={data?.name as string} width={150} height={320} />
+                            <Image className='foto-imagen-producto' src={`${process.env.NEXT_PUBLIC_PATH_EXTERNAL}/api/v1/author/image/author/${data?.image_author}`} alt={data?.name as string} width={150} height={320} />
                         </div>
                     </div>
                 </div>

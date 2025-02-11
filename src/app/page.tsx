@@ -17,9 +17,7 @@ const Home: React.FC = () => {
   const [librosDeStephenKing, setLibrosDeStephenKing] = useState<ProductWithAuthor[]>([])
 
   useEffect(() => {
-
     obtenerLibrosPorVariosAutores("George R.R. Martin", setLibrosDeJuegosDeTronos, Number(6), setLibrosDeStephenKing, "Stephen King", setLibrosDeHarry, "J.K. Rowling")
-    
   }, [])
 
   return (

@@ -78,7 +78,7 @@ const SlugLibro: React.FC = () => {
                                     </div>
                                     <div className="imagen-de-portada">
                                         <div className="img-portada">
-                                            <Image src={`${process.env.NEXT_PUBLIC_PATH}/api/v1/product/image/product/${item.image}`} alt={item.name} width={250} height={330} className='imagen' />
+                                            <Image src={`${process.env.NEXT_PUBLIC_PATH_EXTERNAL}/api/v1/product/image/product/${item.image}`} alt={item.name} width={250} height={330} className='imagen' />
                                         </div>
                                     </div>
                                     <div className="cantidad-paginas">

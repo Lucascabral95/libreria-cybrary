@@ -38,7 +38,7 @@ const Productos = () => {
                         width={32}
                         height={32}
                         alt={item.name}
-                        src={`${process.env.NEXT_PUBLIC_PATH}/api/v1/product/image/product/${item.image}`}
+                        src={`${process.env.NEXT_PUBLIC_PATH_EXTERNAL}/api/v1/product/image/product/${item.image}`}
                     />
                 </td>
                 <td className='name-table'>{item.name}</td>

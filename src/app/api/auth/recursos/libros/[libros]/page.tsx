@@ -50,7 +50,7 @@ const LibrosBuscados = () => {
                     (
                         <tr key={index}>
                             <td style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                <Image className='imagen-del-autor-table' width={32} height={32} alt={item.name} src={`${process.env.NEXT_PUBLIC_PATH}/api/v1/product/image/product/${item.image}`} />
+                                <Image className='imagen-del-autor-table' width={32} height={32} alt={item.name} src={`${process.env.NEXT_PUBLIC_PATH_EXTERNAL}/api/v1/product/image/product/${item.image}`} />
                             </td>
                             <td className='name-table'>{item.name}</td>
                             <td className='sku-table' >{item.sku}</td>

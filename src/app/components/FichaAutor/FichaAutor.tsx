@@ -21,7 +21,7 @@ const FichaAutor: React.FC<FichaAutorProps> = ({ autor, biografia, imagen }) => 
 
                 <div className="biografia-foto">
                     <div className="foto">
-                        <Image className='imagen-del-autor' src={`${process.env.NEXT_PUBLIC_PATH}/api/v1/author/image/author/${imagen}`} alt={autor} width={190} height={190} />
+                        <Image className='imagen-del-autor' src={`${process.env.NEXT_PUBLIC_PATH_EXTERNAL}/api/v1/author/image/author/${imagen}`} alt={autor} width={190} height={190} />
                     </div>
                     <div className="contenido">
                         <p> {biografia} </p>
