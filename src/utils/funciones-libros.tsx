@@ -87,10 +87,10 @@ export const obtenerLibrosPorVariosAutores = async (
     autor: string,
     storage: (libros: ProductWithAuthor[]) => void,
     limit: number,
-    storage2?: (libros: ProductWithAuthor[]) => void,
-    autor2?: string,
-    storage3?: (libros: ProductWithAuthor[]) => void,
-    autor3?: string,
+    // storage2?: (libros: ProductWithAuthor[]) => void,
+    // autor2?: string,
+    // storage3?: (libros: ProductWithAuthor[]) => void,
+    // autor3?: string,
 ) => {
     try {
         // const response = await axiosConToken.get(`${process.env.NEXT_PUBLIC_PATH}/api/v1/product/with-author`);
@@ -102,19 +102,19 @@ export const obtenerLibrosPorVariosAutores = async (
                 .slice(0, limit);
             storage(librosFiltrados);
 
-            if (autor2 && storage2) {
-                const librosFiltradosDos = response.data
-                    .filter((a: ProductWithAuthor) => a.name_author === autor2)
-                    .slice(0, 8);
-                storage2(librosFiltradosDos);
-            }
+            // if (autor2 && storage2) {
+            //     const librosFiltradosDos = response.data
+            //         .filter((a: ProductWithAuthor) => a.name_author === autor2)
+            //         .slice(0, 8);
+            //     storage2(librosFiltradosDos);
+            // }
 
-            if (autor3 && storage3) {
-                const librosFiltradosDos = response.data
-                    .filter((a: ProductWithAuthor) => a.name_author === autor3)
-                    .slice(0, 8);
-                storage3(librosFiltradosDos);
-            }
+            // if (autor3 && storage3) {
+            //     const librosFiltradosDos = response.data
+            //         .filter((a: ProductWithAuthor) => a.name_author === autor3)
+            //         .slice(0, 8);
+            //     storage3(librosFiltradosDos);
+            // }
         }
     } catch (error) {
         if (isAxiosError(error)) {

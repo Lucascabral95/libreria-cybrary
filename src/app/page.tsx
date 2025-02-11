@@ -15,9 +15,11 @@ import { Product } from '@/common/interfaces/products.interface'
 import Image from 'next/image'
 
 const Home: React.FC = () => {
-  const [librosDeHarry, setLibrosDeHarry] = useState<ProductWithAuthor[]>([])
+  // const [librosDeHarry, setLibrosDeHarry] = useState<ProductWithAuthor[]>([])
+  const [librosDeHarry, ] = useState<ProductWithAuthor[]>([])
   const [librosDeJuegosDeTronos, setLibrosDeJuegosDeTronos] = useState<ProductWithAuthor[]>([])
-  const [librosDeStephenKing, setLibrosDeStephenKing] = useState<ProductWithAuthor[]>([])
+  // const [librosDeStephenKing, setLibrosDeStephenKing] = useState<ProductWithAuthor[]>([])
+  const [librosDeStephenKing, ] = useState<ProductWithAuthor[]>([])
 
   const [productos, setProductos] = useState<Product[]>([])
 
@@ -25,7 +27,8 @@ const Home: React.FC = () => {
 
     console.log("Llamando a obtenerLibrosPorVariosAutores...");
     const fetchData = async () => {
-     await obtenerLibrosPorVariosAutores("George R.R. Martin", setLibrosDeJuegosDeTronos, Number(6), setLibrosDeStephenKing, "Stephen King", setLibrosDeHarry, "J.K. Rowling")
+     // await obtenerLibrosPorVariosAutores("George R.R. Martin", setLibrosDeJuegosDeTronos, Number(6), setLibrosDeStephenKing, "Stephen King", setLibrosDeHarry, "J.K. Rowling")
+     await obtenerLibrosPorVariosAutores("George R.R. Martin", setLibrosDeJuegosDeTronos, Number(6))
     }
 
     fetchData()
