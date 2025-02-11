@@ -10,7 +10,7 @@ export const registro = async (
     setError: (error: Errors) => void
 ) => {
     try {
-        const response = await axiosConToken.post(`${process.env.NEXT_PUBLIC_PATH}/api/v1/auth`,
+        const response = await axiosConToken.post(`/api/v1/auth`,
             formData
         )
 
@@ -34,7 +34,7 @@ export const logueo = async (
     setLoading: (loading: boolean) => void
 ) => {
     try {
-        const response = await axiosConToken.post(`${process.env.NEXT_PUBLIC_PATH}/api/v1/auth/login`,
+        const response = await axiosConToken.post(`/api/v1/auth/login`,
             formData, {
             withCredentials: true
         }

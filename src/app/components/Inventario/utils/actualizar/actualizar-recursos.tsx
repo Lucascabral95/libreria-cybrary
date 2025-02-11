@@ -9,8 +9,6 @@ import { Errors } from "@/common/interfaces/errors.interface";
 import { toast } from "react-hot-toast";
 import axiosConToken from "@/app/components/Axios.create";
 
-const PUBLIC_PATH = process.env.NEXT_PUBLIC_PATH;
-
 export const actualizarAutor = async (
     id: number,
     setError: (error: Errors) => void,
@@ -144,7 +142,8 @@ export const obtenerSoloMovimiento = async (
     storage: (movimiento: StockMovimientos[]) => void,
 ) => {
     try {
-        const response = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/stock-movement/${id}`)
+        // const response = await axiosConToken.get(`${PUBLIC_PATH}/api/v1/stock-movement/${id}`)
+        const response = await axiosConToken.get(`/api/v1/stock-movement/${id}`)
 
         if (response.status === 200) {
             console.log("Solo movimiento: " + response.data[0].id)
