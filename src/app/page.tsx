@@ -28,7 +28,12 @@ const Home: React.FC = () => {
   useEffect(() => {
     const obtenerProps = async () => {
       try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_PATH_EXTERNAL}/api/v1/product/with-author`)
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_PATH_EXTERNAL}/api/v1/product/with-author`, {
+          withCredentials: true,
+          headers: {
+            "Content-Type": "application/json",
+          }
+        })
 
         if (response.status === 200) {
           setProds(response.data)
@@ -48,6 +53,7 @@ const Home: React.FC = () => {
 
       <Header />
 
+    <h1> Productos de peticion desde el frontend </h1>
       {prods.map((item, index) => (
         <div key={index}>
           <p> Libro: {item.name} </p>
