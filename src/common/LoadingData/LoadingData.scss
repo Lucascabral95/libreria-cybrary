@@ -1,0 +1,24 @@
+.carga-data-error {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 12px 0;
+
+    .mensaje-de-error {
+        color: var(--color-circulo);
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .icono {
+        display: flex;
+        align-items: center;
+        margin: 0 0 0 6px;
+        transform: translateY( 2px );
+
+        .icon {
+            color: red;
+            font-size: 20px;
+        }
+    }
+}

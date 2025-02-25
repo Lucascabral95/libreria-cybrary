@@ -91,35 +91,56 @@ export const obtenerLibrosPorVariosAutores = async (
     autor2?: string,
     storage3?: (libros: ProductWithAuthor[]) => void,
     autor3?: string,
+    setLoading?: (loading: boolean) => void,
+   setError?: (error: Errors) => void,
+   setPrendiendoMV?: (prendiendoMV: string) => void
 ) => {
-    try {
-        const response = await axiosConToken.get(`/api/v1/product/with-author`);
+    let intentos = 0;
+    const maxIntentos = 4;
+    const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-        if (response.status === 200) {
-            const librosFiltrados = response.data
-                .filter((a: ProductWithAuthor) => a.name_author === autor)
-                .slice(0, limit);
-            storage(librosFiltrados);
+    setLoading?.(true);
 
-            if (autor2 && storage2) {
-                const librosFiltradosDos = response.data
-                    .filter((a: ProductWithAuthor) => a.name_author === autor2)
-                    .slice(0, 8);
-                storage2(librosFiltradosDos);
+    while (intentos < maxIntentos) {
+        try {
+            const response = await axiosConToken.get(`/api/v1/product/with-author`);
+
+            if (response.status === 200) {
+                const librosFiltrados = response.data
+                    .filter((a: ProductWithAuthor) => a.name_author === autor)
+                    .slice(0, limit);
+                storage(librosFiltrados);
+                
+                if (autor2 && storage2) {
+                    const librosFiltradosDos = response.data
+                        .filter((a: ProductWithAuthor) => a.name_author === autor2)
+                        .slice(0, 8);
+                    storage2(librosFiltradosDos);
+                }
+
+                if (autor3 && storage3) {
+                    const librosFiltradosTres = response.data
+                        .filter((a: ProductWithAuthor) => a.name_author === autor3)
+                        .slice(0, 8);
+                    storage3(librosFiltradosTres);
+                }
+
+                break; 
             }
-
-            if (autor3 && storage3) {
-                const librosFiltradosDos = response.data
-                    .filter((a: ProductWithAuthor) => a.name_author === autor3)
-                    .slice(0, 8);
-                storage3(librosFiltradosDos);
+        } catch (error) {
+            console.log(`Intento ${intentos + 1} fallido:`, error);
+            if (intentos < maxIntentos - 1) {
+                await delay(5000); 
+                setPrendiendoMV?.('Prendiendo MV...');
+            } else {
+                setError?.({ message: 'Error de conexión con la máquina virtual', code: 500 })
             }
-        }
-    } catch (error) {
-        if (isAxiosError(error)) {
-            console.log(error);
+        } finally {
+            intentos++;
         }
     }
+
+    setLoading?.(false);
 };
 
 export const obtenerLibrosPorBuscador = async (busqueda: string) => {

@@ -10,14 +10,27 @@ import { obtenerLibrosPorVariosAutores } from '@/utils/funciones-libros'
 import { ProductWithAuthor } from '@/common/interfaces/products-with-author-interface'
 import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header'
+import { Errors } from '@/common/interfaces/errors.interface'
+import LoadingData from '@/common/LoadingData/LoadingData'
 
 const Home: React.FC = () => {
   const [librosDeHarry, setLibrosDeHarry] = useState<ProductWithAuthor[]>([])
   const [librosDeJuegosDeTronos, setLibrosDeJuegosDeTronos] = useState<ProductWithAuthor[]>([])
   const [librosDeStephenKing, setLibrosDeStephenKing] = useState<ProductWithAuthor[]>([])
+  const [loading, setLoading] = useState<boolean>(true)
+  const [error, setError] = useState<Errors>({ message: '', code: 0 })
+  const [prendiendoMV, setPrendiendoMV] = useState<string>('')
 
   useEffect(() => {
-    obtenerLibrosPorVariosAutores("George R.R. Martin", setLibrosDeJuegosDeTronos, Number(6), setLibrosDeStephenKing, "Stephen King", setLibrosDeHarry, "J.K. Rowling")
+    obtenerLibrosPorVariosAutores(
+      "George R.R. Martin", setLibrosDeJuegosDeTronos,
+      Number(6),
+      setLibrosDeStephenKing, "Stephen King",
+      setLibrosDeHarry, "J.K. Rowling",
+      setLoading,
+      setError, 
+      setPrendiendoMV 
+    )
   }, [])
 
   return (
@@ -29,7 +42,7 @@ const Home: React.FC = () => {
 
         <Hero />
 
-        <CategoriaSeccion categoria="Terror" verMas="terror" products={librosDeStephenKing} />
+        <LoadingData text={prendiendoMV} loading={loading} component={<CategoriaSeccion categoria="Terror" verMas="terror" products={librosDeStephenKing} />} error={error} />
 
         <MejorAutor
           autor='Stephen King'
@@ -38,11 +51,11 @@ const Home: React.FC = () => {
           slug='stephen_king'
         />
 
-        <CategoriaSeccion categoria="Harry Potter" verMas="fantasia" products={librosDeHarry} />
+        <LoadingData text={prendiendoMV} loading={loading} component={<CategoriaSeccion categoria="Fantasia" verMas="fantasia" products={librosDeHarry} />} error={error} />
 
         <CategoriasRecomendadas />
 
-        <CategoriaSeccion categoria="Juego de Tronos" verMas="fantasia" products={librosDeJuegosDeTronos} />
+        <LoadingData text={prendiendoMV} loading={loading} component={<CategoriaSeccion categoria="Juego de Tronos" verMas="fantasia" products={librosDeJuegosDeTronos} />} error={error} />
 
       </MainPrincipal>
 
