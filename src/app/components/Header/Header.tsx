@@ -7,58 +7,10 @@ import Link from 'next/link';
 import { obtenerLibrosPorBuscador } from '@/utils/funciones-libros';
 import { IoMenuSharp } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
-import { CategoriasHeader } from '@/common/interfaces/categorias-recomendadas.interface';
 import MenuHamburguesa from './MenuHamburguesa';
 import Buscador from './Buscador/Buscador';
 import useStoreZustand from '@/zustand';
-
-const categorys: CategoriasHeader[] = [
-  {
-    id: 13,
-    name: "Ficción",
-    slug: "ficcion"
-  },
-  {
-    id: 2,
-    name: "Terror",
-    slug: "terror"
-  },
-  {
-    id: 3,
-    name: "Fantasía",
-    slug: "fantasia"
-  },
-  {
-    id: 4,
-    name: "Suspenso",
-    slug: "suspenso"
-  },
-  {
-    id: 5,
-    name: "Aventura",
-    slug: "aventura"
-  },
-  {
-    id: 6,
-    name: "Novelas gráficas",
-    slug: "novelas_graficas"
-  },
-  {
-    id: 7,
-    name: "Cómics",
-    slug: "comics"
-  },
-  {
-    id: 8,
-    name: "Drama",
-    slug: "drama"
-  },
-  {
-    id: 9,
-    name: "Juvenil",
-    slug: "juvenil"
-  },
-]
+import CategoriasDelHeader from "@/JSON/CategoriasDelHeader.json";
 
 const Header: React.FC = () => {
   const [busqueda, ] = useState<string>("");
@@ -134,9 +86,8 @@ const Header: React.FC = () => {
 
             </div>
 
-
             <div className="contenedor-categorias">
-              {categorys.map((item, index) => (
+              {CategoriasDelHeader.map((item, index) => (
                 <Link href={`/libro/categoria/${item.slug}`} className="categoria" key={index}>
                   <p className="nombre-categoria" style={{ color: item.name === "Ver todo" ? "var(--color-seccion)" : "var(--color-circulo)" }} > {item.name} </p>
                 </Link>

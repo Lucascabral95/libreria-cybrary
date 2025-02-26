@@ -3,7 +3,7 @@ import { catchError } from "@/app/components/Recursos/utils/obtencionDetallesRec
 import { Errors } from "@/common/interfaces/errors.interface"
 import { ProductWithAuthor } from "@/common/interfaces/products-with-author-interface"
 import { Product } from "@/common/interfaces/products.interface"
-import { isAxiosError } from "axios"
+import axios, { isAxiosError } from "axios"
 
 export const obtenerLibro = async (slug: string | string[], setDataLibro: (libro: ProductWithAuthor[]) => void, setError: (error: Errors) => void) => {
     try {
@@ -145,7 +145,9 @@ export const obtenerLibrosPorVariosAutores = async (
 
 export const obtenerLibrosPorBuscador = async (busqueda: string) => {
     try {
-        const response = await axiosConToken.get(`/api/v1/product/with-author`)
+        const response = await axios.get(`https://nest-app-6t3h.onrender.com/api/v1/product/with-author`)
+
+        if (!busqueda.trim()) return [];
 
         if (response.status === 200) {
             const filtroLibros = response.data.filter((a: ProductWithAuthor) => a.name.includes(busqueda) || a.name_author.includes(busqueda) || a.slug_category.includes(busqueda) || a.publication_date.includes(busqueda))
@@ -191,13 +193,24 @@ export const obtenerTodosLosLibros = async (
     setLoading?: (loading: boolean) => void
 ) => {
     try {
-        const response = await axiosConToken.get(`/api/v1/product?limit=100`)
+        // const response = await axiosConToken.get(`/api/v1/product?limit=100`)
+        const response = await axios.get(`https://nest-app-6t3h.onrender.com/api/v1/product?limit=100`)
 
         if (response.status === 200) {
-            const librosFiltrados = response.data.filter((item: Product) => item.name.toLowerCase().includes(input) || item.author.toLowerCase().includes(input))
-            storage(librosFiltrados)
+            const inputLower = input.toLowerCase();
+            storage(
+                response.data.filter(({ name, author }: Product) => 
+                    name.toLowerCase().includes(inputLower) || author.toLowerCase().includes(inputLower)
+                )
+            );
             setLoading?.(false);
         }
+        
+        // if (response.status === 200) {
+        //     const librosFiltrados = response.data.filter((item: Product) => item.name.toLowerCase().includes(input) || item.author.toLowerCase().includes(input))
+        //     storage(librosFiltrados)
+        //     setLoading?.(false);
+        // }
 
     } catch (error) {
         if (error instanceof Error) {

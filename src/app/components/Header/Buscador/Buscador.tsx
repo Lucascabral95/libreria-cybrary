@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import "./Buscador.scss"
 import { Product } from '@/common/interfaces/products.interface'
 import Link from 'next/link'
 import { CiSearch } from 'react-icons/ci'
 import useStoreZustand from '@/zustand'
 import { obtenerTodosLosLibros } from '@/utils/funciones-libros'
+import { debounce } from 'lodash'
 
 interface Props {
     link: string,
@@ -33,11 +34,19 @@ const Buscador: React.FC<Props> = ({ link, linkAll, sliceProducts, setSliceProdu
 
     }, [resize])
 
+    const obtenerLibrosDebounced = useMemo(() => debounce((input: string, setProductos: React.Dispatch<React.SetStateAction<Product[]>>) => {
+        obtenerTodosLosLibros(input, setProductos);
+    }, 200), []);
+
     useEffect(() => {
-        if (inputBusquedaAdmin) {
-            obtenerTodosLosLibros(inputBusquedaAdmin, setProductos)
+        if (inputBusquedaAdmin.trim() !== "") {
+            obtenerLibrosDebounced(inputBusquedaAdmin, setProductos);
         }
-    }, [inputBusquedaAdmin])
+
+        return () => {
+            obtenerLibrosDebounced.cancel();
+        };
+    }, [inputBusquedaAdmin]);
 
     return (
         <div className='buscador-de-recursos'>

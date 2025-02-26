@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "Ficción",
+        "slug": "ficcion"
+    },
+    {
+        "id": 2,
+        "name": "Terror",
+        "slug": "terror"
+    },
+    {
+        "id": 3,
+        "name": "Fantasía",
+        "slug": "fantasia"
+    },
+    {
+        "id": 4,
+        "name": "Suspenso",
+        "slug": "suspenso"
+    },
+    {
+        "id": 5,
+        "name": "Aventura",
+        "slug": "aventura"
+    },
+    {
+        "id": 6,
+        "name": "Novelas gráficas",
+        "slug": "novelas_graficas"
+    },
+    {
+        "id": 7,
+        "name": "Cómics",
+        "slug": "comics"
+    },
+    {
+        "id": 8,
+        "name": "Drama",
+        "slug": "drama"
+    },
+    {
+        "id": 9,
+        "name": "Juvenil",
+        "slug": "juvenil"
+    }
+]
